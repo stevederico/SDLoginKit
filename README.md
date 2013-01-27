@@ -2,7 +2,7 @@ SDLoginKit
 =======
 **Login/Sign-Up ViewControllers Ready-To-Use with your Custom Backend**
 
-Building a authentication system can be tedious and repeative. Why write the same code over and over when you could be spending time working on real application logic? SDLoginKit is a simple library that provides Login and Sign-Up viewcontrollers out-of-the-box. Just subscribe to a few delegate callbacks for success/failure and BAM! You are ready to start managing and creating users. Want to customize the entire experience? No problem just override shouldBeginLogin and all the codez belong to you!
+Building a authentication system can be tedious and repeative. Why write the same code over and over when you could be spending time working on real application logic? SDLoginKit is a simple library that provides Login and Sign-Up viewcontrollers out-of-the-box. Just subscribe to a few delegate callbacks for success/failure and BAM! You are ready to start managing and creating users. Want to customize the entire experience? No problem just override `loginViewControllerShouldBeginLogin` and all the codez belong to you! You can even add your own logo to the login screen. Just set `logoImage` to the `UIImage` of your choice.
 
 > SDLoginKit is named LoginKit, because it has everything you need add a fully-customizable authentication system to your iOS Application.
 
