@@ -18,8 +18,9 @@
 		7B255D6516B5BDCF0036AFB8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B255D6416B5BDCF0036AFB8 /* Default-568h@2x.png */; };
 		7B255D6816B5BDCF0036AFB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B255D6716B5BDCF0036AFB8 /* ViewController.m */; };
 		7B255D6B16B5BDCF0036AFB8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B255D6916B5BDCF0036AFB8 /* ViewController.xib */; };
-		7B255D7616B5BDDE0036AFB8 /* SDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B255D7316B5BDDE0036AFB8 /* SDLoginViewController.m */; };
-		7B255D7716B5BDDE0036AFB8 /* SDSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B255D7516B5BDDE0036AFB8 /* SDSignUpViewController.m */; };
+		7B6800B616B5BE9D005D40B7 /* _worklog in Resources */ = {isa = PBXBuildFile; fileRef = 7B6800B516B5BE9D005D40B7 /* _worklog */; };
+		7B6800C116B5BEE6005D40B7 /* SDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6800BE16B5BEE6005D40B7 /* SDLoginViewController.m */; };
+		7B6800C216B5BEE6005D40B7 /* SDSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6800C016B5BEE6005D40B7 /* SDSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,10 +40,11 @@
 		7B255D6616B5BDCF0036AFB8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7B255D6716B5BDCF0036AFB8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7B255D6A16B5BDCF0036AFB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		7B255D7216B5BDDE0036AFB8 /* SDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLoginViewController.h; sourceTree = "<group>"; };
-		7B255D7316B5BDDE0036AFB8 /* SDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLoginViewController.m; sourceTree = "<group>"; };
-		7B255D7416B5BDDE0036AFB8 /* SDSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSignUpViewController.h; sourceTree = "<group>"; };
-		7B255D7516B5BDDE0036AFB8 /* SDSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSignUpViewController.m; sourceTree = "<group>"; };
+		7B6800B516B5BE9D005D40B7 /* _worklog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = _worklog; path = ../../_worklog; sourceTree = "<group>"; };
+		7B6800BD16B5BEE6005D40B7 /* SDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLoginViewController.h; sourceTree = "<group>"; };
+		7B6800BE16B5BEE6005D40B7 /* SDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLoginViewController.m; sourceTree = "<group>"; };
+		7B6800BF16B5BEE6005D40B7 /* SDSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSignUpViewController.h; sourceTree = "<group>"; };
+		7B6800C016B5BEE6005D40B7 /* SDSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,7 @@
 		7B255D4D16B5BDCF0036AFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7B255D7116B5BDDE0036AFB8 /* SDLoginKit */,
+				7B6800BC16B5BEE6005D40B7 /* SDLoginKit */,
 				7B255D4E16B5BDCF0036AFB8 /* UIKit.framework */,
 				7B255D5016B5BDCF0036AFB8 /* Foundation.framework */,
 				7B255D5216B5BDCF0036AFB8 /* CoreGraphics.framework */,
@@ -95,6 +97,7 @@
 				7B255D6616B5BDCF0036AFB8 /* ViewController.h */,
 				7B255D6716B5BDCF0036AFB8 /* ViewController.m */,
 				7B255D6916B5BDCF0036AFB8 /* ViewController.xib */,
+				7B6800B516B5BE9D005D40B7 /* _worklog */,
 				7B255D5516B5BDCF0036AFB8 /* Supporting Files */,
 			);
 			path = SDLoginExample;
@@ -114,16 +117,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7B255D7116B5BDDE0036AFB8 /* SDLoginKit */ = {
+		7B6800BC16B5BEE6005D40B7 /* SDLoginKit */ = {
 			isa = PBXGroup;
 			children = (
-				7B255D7216B5BDDE0036AFB8 /* SDLoginViewController.h */,
-				7B255D7316B5BDDE0036AFB8 /* SDLoginViewController.m */,
-				7B255D7416B5BDDE0036AFB8 /* SDSignUpViewController.h */,
-				7B255D7516B5BDDE0036AFB8 /* SDSignUpViewController.m */,
+				7B6800BD16B5BEE6005D40B7 /* SDLoginViewController.h */,
+				7B6800BE16B5BEE6005D40B7 /* SDLoginViewController.m */,
+				7B6800BF16B5BEE6005D40B7 /* SDSignUpViewController.h */,
+				7B6800C016B5BEE6005D40B7 /* SDSignUpViewController.m */,
 			);
 			name = SDLoginKit;
-			path = ../SDLoginKit/SDLoginKit;
+			path = ../SDLoginKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +185,7 @@
 				7B255D6316B5BDCF0036AFB8 /* Default@2x.png in Resources */,
 				7B255D6516B5BDCF0036AFB8 /* Default-568h@2x.png in Resources */,
 				7B255D6B16B5BDCF0036AFB8 /* ViewController.xib in Resources */,
+				7B6800B616B5BE9D005D40B7 /* _worklog in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +199,8 @@
 				7B255D5B16B5BDCF0036AFB8 /* main.m in Sources */,
 				7B255D5F16B5BDCF0036AFB8 /* AppDelegate.m in Sources */,
 				7B255D6816B5BDCF0036AFB8 /* ViewController.m in Sources */,
-				7B255D7616B5BDDE0036AFB8 /* SDLoginViewController.m in Sources */,
-				7B255D7716B5BDDE0036AFB8 /* SDSignUpViewController.m in Sources */,
+				7B6800C116B5BEE6005D40B7 /* SDLoginViewController.m in Sources */,
+				7B6800C216B5BEE6005D40B7 /* SDSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +317,7 @@
 				7B255D7016B5BDCF0036AFB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

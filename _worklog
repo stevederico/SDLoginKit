@@ -1,0 +1,28 @@
+1/26
+
+Changed Login to TableView
+Added Sign Up Button to Upper Right
+Added Sign In Button
+Add SDPlaceholder
+Fixed SDPlacerholder Placeholder text
+Changed SignUpView to TableView
+Added ImageView to LoginView
+Add login trigger via keyboard
+Add logo property
+
+
+- Add Touch Sensor
+- Add Next/Previous Buttons to keyboard accessory
+- Add Customizeable Fields
+- Add Validations
+- Add PreDefined backends
+    -Systems
+        -OmniAuth
+        -Bates Gem
+        -Devise
+    -Callbacks
+        -Did Login
+        -Failed to Login
+        -Did SignUp
+        -Failed to SignUp
+        -SignUpCanceled
