@@ -8,12 +8,14 @@ Building a authentication system can be tedious and repeative. Why write the sam
 
 SDLoginKit is meant to save you time so you can focus on what matters, application logic. The library is still a little green behind the ears and I would love to see any issues or pull request you may have. There is a sample project if you have any question on how it all works.
 
-We are working to create pre-defined implementations for different authentication systems like the following:
+Submit an Pull Request/Issue/Enhancement and keep up with my progress in the [worklog](https://github.com/stevederico/SDLoginKit/blob/master/_worklog).
+
+I am working to create pre-defined implementations for different authentication systems like the following:
 * Devise
 * OmniAuth
 * Your-favorite-authenication
 
-Please help us by submitting a generic implementation with your back-end of choice.
+Please help me by submitting a generic implementation with your back-end of choice.
 
 Overall, this is a great way to get your authentication up and running then you can go from there.
 
