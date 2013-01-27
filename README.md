@@ -60,11 +60,8 @@ Done!
 }
 ```
 ## Sample Images
-![User Index](http://cl.ly/Lh6Q/iOS%20Simulator%20Screen%20shot%20Dec%2018,%202012%209.14.11%20PM.png) Index
-![Add User](http://cl.ly/Lgcq/iOS%20Simulator%20Screen%20shot%20Dec%2018,%202012%208.55.31%20PM.png) Create
-![Show User](http://cl.ly/LgTc/iOS%20Simulator%20Screen%20shot%20Dec%2018,%202012%209.30.35%20PM.png) Show
-![Edit User](http://cl.ly/Lfeo/iOS%20Simulator%20Screen%20shot%20Dec%2018,%202012%209.30.46%20PM.png) Update
-![Delete User](http://cl.ly/LgRo/iOS%20Simulator%20Screen%20shot%20Dec%2018,%202012%209.31.55%20PM.png) Delete
+![User Index](http://f.cl.ly/items/3K390q3k143G0P1j2O2a/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%201.47.16%20PM.png) 
+![Add User](http://f.cl.ly/items/3m1d1w0J3C1n2u1Q2t1B/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%201.47.22%20PM.png) 
 
 ## Contact
 
