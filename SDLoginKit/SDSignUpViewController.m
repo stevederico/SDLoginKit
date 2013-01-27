@@ -45,7 +45,6 @@
     
     [UIView commitAnimations];
 
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,22 +129,20 @@
     
     NSLog(@"User Tapped Sign Up Button");
     
-        //Send SignUp Request to Server
-        //Get Response
-        //Process Response
-        if ([self validateSignUp]) {
-            [self signUpViewControllerDidSuccessfullyLoginWithResponse:nil];
-        }else{
-            [self signUpViewControllerFailedToLoginWithResponse:@"Username already taken"];
-        }
+    //Send SignUp Request to Server
+    //Process Response
+    if ([self validateSignUp]) {
         //SuccessFul SignUp
-        //Failed SignUp
-        //Cancelled SignUp
-    
+        [self signUpViewControllerDidSuccessfullyLoginWithResponse:nil];
+    }else{
+         //Failed SignUp
+        [self signUpViewControllerFailedToLoginWithResponse:@"Username already taken"];
+    }
     
 }
 
 - (void)signUpViewControllerDidSuccessfullyLoginWithResponse:(id)response {
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

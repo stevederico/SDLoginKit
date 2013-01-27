@@ -132,17 +132,16 @@
     NSLog(@"User Tapped Sign In Button");
     
     //Send Login Request to Server
-    //Get Response
     //Process Response
-        if ([self validateLogin]) {
-            [self loginViewControllerDidSuccessfullyLoginWithResponse:nil];
-        }else{
-            [self loginViewControllerFailedToLoginWithResponse:@"Email & Password  do not match"];
-        }
+    if ([self validateLogin]) {
         //SuccessFul Login
+        [self loginViewControllerDidSuccessfullyLoginWithResponse:nil];
+    }else{
         //Failed Login
-        //Cancelled Login
+        [self loginViewControllerFailedToLoginWithResponse:@"Email & Password do not match"];
+    }
     
+        
 }
 
 
@@ -159,9 +158,6 @@
     [alert show];
     
 }
-
-
-
 
 
 #pragma mark ViewController
