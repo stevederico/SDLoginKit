@@ -12,7 +12,7 @@ Add logo property
 Add SDKit Remote Repo
 Added Welcome Screen
 Added New Delegate Callback Signatures
-
+Added Error Alerts
 
 
 - Add Customizeable Fields
@@ -26,3 +26,4 @@ Added New Delegate Callback Signatures
         -Devise
     - Facebook
     - Twitter
+- Forgot password

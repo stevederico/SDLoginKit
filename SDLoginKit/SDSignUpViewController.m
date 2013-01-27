@@ -133,6 +133,11 @@
         //Send SignUp Request to Server
         //Get Response
         //Process Response
+        if ([self validateSignUp]) {
+            [self signUpViewControllerDidSuccessfullyLoginWithResponse:nil];
+        }else{
+            [self signUpViewControllerFailedToLoginWithResponse:@"Username already taken"];
+        }
         //SuccessFul SignUp
         //Failed SignUp
         //Cancelled SignUp
@@ -146,6 +151,14 @@
 
 - (void)signUpViewControllerFailedToLoginWithResponse:(id)response {
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"SignUp Failed" message:[response description] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+- (BOOL)validateSignUp{
+    
+    return YES;
 }
 
 

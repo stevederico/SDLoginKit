@@ -135,9 +135,9 @@
     //Get Response
     //Process Response
         if ([self validateLogin]) {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self loginViewControllerDidSuccessfullyLoginWithResponse:nil];
         }else{
-            NSLog(@"Login Failed");
+            [self loginViewControllerFailedToLoginWithResponse:@"Email & Password  do not match"];
         }
         //SuccessFul Login
         //Failed Login
@@ -148,12 +148,15 @@
 
 - (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response {
     
+     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
 
 - (void)loginViewControllerFailedToLoginWithResponse:(id)response{
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[response description] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
     
 }
 
