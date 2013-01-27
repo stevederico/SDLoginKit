@@ -14,9 +14,17 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (self.view.hidden == NO) {
+        self.view.hidden = YES;
+    }else{
+        self.view.hidden = NO;
+    }
+    
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +34,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)againTapped:(id)sender {
+    self.view.hidden = YES;
+        //Add SDLoginKit
+    SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navController animated:YES completion:nil];
+}
 @end

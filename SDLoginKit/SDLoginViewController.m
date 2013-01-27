@@ -130,19 +130,28 @@
 
 - (void)didTapSignIn{
     
-    NSLog(@"SignIn!");
+    NSLog(@"User Tapped Sign In Button");
+    
+    //Add Your Login Validation to Validate Login
+    if ([self validateLogin]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+         NSLog(@"Login Failed");
+    }
 
 }
 
 - (void)didTapSignUp{
 
-    NSLog(@"Show SignUp!");
-        
+    NSLog(@"User Tapped Sign Up Button");
     _signUpViewController = [[SDSignUpViewController alloc] init];
-
     [self.navigationController pushViewController:_signUpViewController animated:YES];
     
     
+}
+
+- (BOOL)validateLogin{
+    return YES;
 }
 
 
