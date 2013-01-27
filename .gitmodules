@@ -1,0 +1,3 @@
+[submodule "SDKit"]
+	path = SDKit
+	url = git@github.com:stevederico/SDKit.git

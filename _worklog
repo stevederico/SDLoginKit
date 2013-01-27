@@ -9,10 +9,9 @@ Changed SignUpView to TableView
 Added ImageView to LoginView
 Add login trigger via keyboard
 Add logo property
+Add SDKit Remote Repo
 
 
-- Add Touch Sensor
-- Add Next/Previous Buttons to keyboard accessory
 - Add Customizeable Fields
 - Add Validations
 - Add PreDefined backends
