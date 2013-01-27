@@ -10,18 +10,19 @@ Added ImageView to LoginView
 Add login trigger via keyboard
 Add logo property
 Add SDKit Remote Repo
+Added Welcome Screen
+Added New Delegate Callback Signatures
+
 
 
 - Add Customizeable Fields
 - Add Validations
+-Enable Encryption Between Client-Server
+-Add AFNetworking
 - Add PreDefined backends
     -Systems
         -OmniAuth
         -Bates Gem
         -Devise
-    -Callbacks
-        -Did Login
-        -Failed to Login
-        -Did SignUp
-        -Failed to SignUp
-        -SignUpCanceled
+    - Facebook
+    - Twitter

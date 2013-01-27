@@ -11,9 +11,12 @@
 
 @protocol SignUpViewControllerDelegate <NSObject>
 
-- (void)signUp;
+- (void)signUpViewControllerShouldBeginSignUp;
+- (void)signUpViewControllerDidSuccessfullyLoginWithResponse:(id)response;
+- (void)signUpViewControllerFailedToLoginWithResponse:(id)response;
 
 @end
+
 
 @interface SDSignUpViewController : UITableViewController <SignUpViewControllerDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) id <SignUpViewControllerDelegate> delegate;
@@ -22,3 +25,4 @@
 @property (strong, nonatomic)  UITextField *emailField;
 
 @end
+

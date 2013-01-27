@@ -23,8 +23,6 @@
         self.view.hidden = NO;
     }
     
-    
-    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -36,7 +34,7 @@
 
 - (IBAction)againTapped:(id)sender {
     self.view.hidden = YES;
-        //Add SDLoginKit
+    //Add SDLoginKit
     SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [self presentViewController:navController animated:YES completion:nil];

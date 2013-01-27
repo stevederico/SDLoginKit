@@ -46,7 +46,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
 
     if (textField == _passwordField) {
-        [self.delegate didTapSignIn];
+        [self.delegate loginViewControllerShouldBeginLogin];
     }else{
         [self.passwordField becomeFirstResponder];
     }
@@ -62,7 +62,6 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
     return 2;
 }
 
@@ -98,7 +97,7 @@
     
     SDFooterButtonView *footerView = [[SDFooterButtonView alloc] initWithStyle:SDFooterButtonStyleGreen];
     [footerView.button setTitle:@"Sign In" forState:UIControlStateNormal];
-    [footerView.button addTarget:self action:@selector(didTapSignIn) forControlEvents:UIControlEventTouchUpInside];
+    [footerView.button addTarget:self action:@selector(loginViewControllerShouldBeginLogin) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
 }
 
@@ -126,33 +125,54 @@
 }
 
 
-#pragma mark - LoginViewControllerDelegate
+#pragma mark - SDLoginViewControllerDelegate
 
-- (void)didTapSignIn{
+- (void)loginViewControllerShouldBeginLogin{
     
     NSLog(@"User Tapped Sign In Button");
     
-    //Add Your Login Validation to Validate Login
-    if ([self validateLogin]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }else{
-         NSLog(@"Login Failed");
-    }
+    //Send Login Request to Server
+    //Get Response
+    //Process Response
+        if ([self validateLogin]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            NSLog(@"Login Failed");
+        }
+        //SuccessFul Login
+        //Failed Login
+        //Cancelled Login
+    
+}
+
+
+- (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response {
+    
 
 }
 
-- (void)didTapSignUp{
 
-    NSLog(@"User Tapped Sign Up Button");
-    _signUpViewController = [[SDSignUpViewController alloc] init];
-    [self.navigationController pushViewController:_signUpViewController animated:YES];
+- (void)loginViewControllerFailedToLoginWithResponse:(id)response{
     
     
 }
+
+
+
+
+
+#pragma mark ViewController
 
 - (BOOL)validateLogin{
     return YES;
 }
 
+- (void)didTapSignUp{
+    
+    _signUpViewController = [[SDSignUpViewController alloc] init];
+    [self.navigationController pushViewController:_signUpViewController animated:YES];
+    
+
+}
 
 @end

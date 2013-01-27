@@ -63,7 +63,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if (textField == _confirmField) {
-        [self.delegate signUp];
+        [self.delegate signUpViewControllerShouldBeginSignUp];
     }else if (textField == _emailField) {
         [self.passwordField becomeFirstResponder];
     }else{
@@ -115,7 +115,7 @@
     
     SDFooterButtonView *footerView = [[SDFooterButtonView alloc] initWithStyle:SDFooterButtonStyleGreen];
     [footerView.button setTitle:@"Sign Up" forState:UIControlStateNormal];
-    [footerView.button addTarget:self action:@selector(signUp) forControlEvents:UIControlEventTouchUpInside];
+    [footerView.button addTarget:self action:@selector(signUpViewControllerShouldBeginSignUp) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
 
 }
@@ -126,10 +126,27 @@
 
 #pragma mark - SignUpViewControllerDelegate
 
-- (void)signUp{
-
-    NSLog(@"SIGN UP THE USER!");
-
+- (void)signUpViewControllerShouldBeginSignUp{
+    
+    NSLog(@"User Tapped Sign Up Button");
+    
+        //Send SignUp Request to Server
+        //Get Response
+        //Process Response
+        //SuccessFul SignUp
+        //Failed SignUp
+        //Cancelled SignUp
+    
+    
 }
+
+- (void)signUpViewControllerDidSuccessfullyLoginWithResponse:(id)response {
+    
+}
+
+- (void)signUpViewControllerFailedToLoginWithResponse:(id)response {
+    
+}
+
 
 @end
