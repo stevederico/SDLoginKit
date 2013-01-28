@@ -79,6 +79,7 @@
     if (indexPath.row == 0) {
         [cell.textField setPlaceholder:@"Email"];
         self.emailField = cell.textField;
+        [self.emailField setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self.emailField setReturnKeyType:UIReturnKeyNext];
         [self.emailField becomeFirstResponder];
         
@@ -86,6 +87,7 @@
         cell.textField.placeholder = @"Password";
         cell.textField.secureTextEntry = YES;
         self.passwordField = cell.textField;
+        [self.passwordField setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self.passwordField setReturnKeyType:UIReturnKeyGo];
     }
     

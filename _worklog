@@ -15,7 +15,9 @@ Added New Delegate Callback Signatures
 Added Error Alerts
 Routed Sign Up 
 Wrote Readme Description
-
+Imporeved Signatures
+Added More Parameters
+Turn off Autocomplete in Fields
 
 - Add Customizeable Fields
 - Add Validations
@@ -32,3 +34,5 @@ Wrote Readme Description
 - How-to get Started in Readme
 - Cached Login
 - Sign Out?
+-serverURL
+-property for Email Regex validation
