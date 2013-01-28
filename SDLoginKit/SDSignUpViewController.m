@@ -1,17 +1,17 @@
-//
-//  SDSignUpViewController.m
-//  SDLoginKit
-//
-//  Created by Steve Derico on 1/26/13.
-//  Copyright (c) 2013 Bixby Apps. All rights reserved.
-//
+    //
+    //  SDSignUpViewController.m
+    //  SDLoginKit
+    //
+    //  Created by Steve Derico on 1/26/13.
+    //  Copyright (c) 2013 Bixby Apps. All rights reserved.
+    //
 
 #import "SDSignUpViewController.h"
 
 @interface SDSignUpViewController (){
     
     NSArray *_fields;
-
+    
 }
 - (void)didTapSignUp;
 @end
@@ -23,9 +23,9 @@
 
 - (id)init{
     
-   return [self initWithArrayOfFields:@[@"Email", @"Password"]];
-
-
+    return [self initWithArrayOfFields:@[@"Email", @"Password"]];
+    
+    
 }
 
 - (id)initWithArrayOfFields:(NSArray*)fields{
@@ -54,16 +54,16 @@
     [cell.textField becomeFirstResponder];
     
     [UIView commitAnimations];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidUnload {
-
+    
     [super viewDidUnload];
 }
 
@@ -79,7 +79,7 @@
         UITextField *tf = (UITextField*)[self.view viewWithTag:textField.tag+1];
         [tf becomeFirstResponder];
     }
-        
+    
     
     return YES;
 }
@@ -107,7 +107,7 @@
         cell.textField.secureTextEntry = YES;
     }
     
-    if (indexPath.row == [_fields count] -1) {
+    if (indexPath.row == [_fields count]) {
         [cell.textField setReturnKeyType:UIReturnKeyJoin];
     }
     
@@ -124,7 +124,7 @@
     [footerView.button setTitle:@"Sign Up" forState:UIControlStateNormal];
     [footerView.button addTarget:self action:@selector(didTapSignUp) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
-
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -135,20 +135,20 @@
 
 - (id)signUpViewControllerShouldBeginSignUp:(NSDictionary*)credentials{
     
-    //Send SignUp Request to Your Server
-    //Process Response
-    //Return NSError for Failure
-    //Returen Anything else including nil for Success
-
-    //EXAMPLE FAILURE
+        //Send SignUp Request to Your Server
+        //Process Response
+        //Return NSError for Failure
+        //Returen Anything else including nil for Success
+    
+        //EXAMPLE FAILURE
     NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"SignUp Error", @"Title", @"Don't Forget to override ShouldBeginSignUp. Return an NSError to display alerts.", @"Message", nil];
     return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
-    //EXAMPLE SUCCESS
-    // User *myUser = [User authenicatedUserFromBackend]
-    // return myUser
-
-    //You can also return nil for Success
-    // return nil
+        //EXAMPLE SUCCESS
+        // User *myUser = [User authenicatedUserFromBackend]
+        // return myUser
+    
+        //You can also return nil for Success
+        // return nil
     
 }
 
@@ -172,31 +172,35 @@
 
 - (void)didTapSignUp{
     
-    //insert regex validate call here
-
-    //get credinals
+        //insert regex validate call here
+    
+        //get credinals
     NSMutableDictionary *creds = [[NSMutableDictionary alloc] init];
-    //This should loop through all and use their placeholders as keys
+        //This should loop through all and use their placeholders as keys
     for (int i = 0; i < [self.tableView numberOfRowsInSection:0];i++) {
         SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         NSString *k = cell.textField.placeholder;
         NSString *v = cell.textField.text;
+        if (![k isEqualToString:@"Password"]) {
+            v = v.lowercaseString;
+        }
+        
         [creds setValue:v forKey:k];
     }
     
     NSLog(@"CREDS %@",creds);
-
-    //call delegate
+    
+        //call delegate
     id response = [self.delegate signUpViewControllerShouldBeginSignUp:creds];
-
+    
     if ([response isKindOfClass:[NSError class]]) {
-    //There was an error
+            //There was an error
         [self.delegate signUpViewControllerFailedToSignUpWithError:response];
     } else {
         [self.delegate signUpViewControllerDidSuccessfullySignUpWithResponse:response];
     }
     
-
+    
 }
 
 

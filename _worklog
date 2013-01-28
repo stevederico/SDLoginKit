@@ -28,9 +28,16 @@ Added base init override
 Added Next and Submit Button to SignUp
 Removed confirmField,pasField, emailField properties & Add tags
 Custom Sign Up Fields
--Fix Join Button on Default setup
+Fix Join Button on Default setup
 
+1/27
+Added Present Class method for LoginView
+Fixed Capitalization in login
 
+- add login test delegate
+- singleton class method
+- relauch class method
+- Make SDSignUpDelegate same as SdLoginViewControllerDelegate
 - Custom SignIn Fields?
 - Add an SDLoginViewController property for ArrayFields
 - SignUp Backing Store?

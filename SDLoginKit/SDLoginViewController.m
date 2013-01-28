@@ -1,10 +1,10 @@
-//
-//  SDLoginViewController.m
-//  SDLoginKit
-//
-//  Created by Steve Derico on 1/26/13.
-//  Copyright (c) 2013 Bixby Apps. All rights reserved.
-//
+    //
+    //  SDLoginViewController.m
+    //  SDLoginKit
+    //
+    //  Created by Steve Derico on 1/26/13.
+    //  Copyright (c) 2013 Bixby Apps. All rights reserved.
+    //
 
 #import "SDLoginViewController.h"
 
@@ -24,6 +24,15 @@
 @synthesize signUpViewController = _signUpViewController;
 @synthesize logoImageView = _logoImageView;
 
++ (void)presentModalLoginViewControllerOnViewController:(UIViewController*)viewController withDelegate:(id)delegate{
+    
+    SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
+    [loginViewController setDelegate:delegate];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [viewController presentViewController:nvc animated:YES completion:nil];
+    
+}
+
 - (id)init{
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
@@ -34,18 +43,18 @@
         self.emailField.returnKeyType = UIReturnKeyNext;
         self.passwordField.returnKeyType = UIReturnKeyGo;
         self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, 300, 100)];
-        self.logoImage = [UIImage imageNamed:@"superman"];
+        self.logoImage = [UIImage imageNamed:@"KKLogo.jpg"];
         self.logoImageView.image = self.logoImage;
         
         UIBarButtonItem *signUpButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Up" style:UIBarButtonItemStylePlain target:self action:@selector(didTapSignUp)];
         self.navigationItem.rightBarButtonItem = signUpButton;
-    
+        
     }
     return self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-
+    
     if (textField == _passwordField) {
         [self didTapSignIn];
     }else{
@@ -67,7 +76,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     static NSString *cellIdentifer = @"CellIdentifer";
     
     SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView dequeueReusableCellWithIdentifier:cellIdentifer];
@@ -115,44 +124,44 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-
+    
     [self.logoImageView setContentMode:UIViewContentModeScaleAspectFit];
     self.logoImageView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     
     if (self.logoImageView.image != nil) {
-          return  110;
+        return  110;
     } else {
         return 0;
     }
- 
+    
 }
 
 #pragma mark - SDLoginViewControllerDelegate
 
 - (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials{
     
-    //Send Login Request to Your Server
-    //Process Response
-    //Return NSError for Failure
-    //Returen Anything else including nil for Success
-
-    //EXAMPLE FAILURE
+        //Send Login Request to Your Server
+        //Process Response
+        //Return NSError for Failure
+        //Returen Anything else including nil for Success
+    
+        //EXAMPLE FAILURE
     NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override ShouldBeginLogin. Return an NSError to display alerts.", @"Message", nil];
     return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
-    //EXAMPLE SUCCESS
-    // User *myUser = [User authenicatedUserFromBackend]
-    // return myUser
+        //EXAMPLE SUCCESS
+        // User *myUser = [User authenicatedUserFromBackend]
+        // return myUser
     
-    //You can also return nil for Success
-    // return nil
+        //You can also return nil for Success
+        // return nil
     
 }
 
 
 - (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response {
     
-     [self dismissViewControllerAnimated:YES completion:nil];
-
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 
@@ -172,28 +181,33 @@
 
 - (void)didTapSignUp{
     
-    _signUpViewController = [[SDSignUpViewController alloc] init];
-    
+    _signUpViewController = [[SDSignUpViewController alloc] initWithArrayOfFields:@[@"Email",@"Password", @"Company"]];
+    [_signUpViewController setDelegate:self.delegate];
     [self.navigationController pushViewController:_signUpViewController animated:YES];
 }
 
 - (void)didTapSignIn{
     
-    //insert regex validate call here
+        //insert regex validate call here
     
-    //get credinals
-    NSDictionary *creds = [NSDictionary dictionaryWithObjectsAndKeys:self.emailField.text, @"Email",self.passwordField.text, @"Password", nil];
+        //get credinals
+    NSDictionary *creds = [NSDictionary dictionaryWithObjectsAndKeys:self.emailField.text.lowercaseString, @"Email",self.passwordField.text, @"Password", nil];
     
-    //call delegate
+        //call delegate
     id response = [self.delegate loginViewControllerShouldBeginLogin:creds];
     
     if ([response isKindOfClass:[NSError class]]) {
             //There was an error
-         [self.delegate loginViewControllerFailedToLoginWithError:response];
+        [self.delegate loginViewControllerFailedToLoginWithError:response];
     } else {
         [self.delegate loginViewControllerDidSuccessfullyLoginWithResponse:response];
-    
+        
     }
+    
+    
+    
+    
+    
 }
 
 @end
