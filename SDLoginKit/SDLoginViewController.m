@@ -173,6 +173,7 @@
 - (void)didTapSignUp{
     
     _signUpViewController = [[SDSignUpViewController alloc] init];
+    
     [self.navigationController pushViewController:_signUpViewController animated:YES];
 }
 
@@ -193,11 +194,6 @@
         [self.delegate loginViewControllerDidSuccessfullyLoginWithResponse:response];
     
     }
-
-  
-    
-    
-    
 }
 
 @end

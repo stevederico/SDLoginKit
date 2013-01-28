@@ -11,18 +11,16 @@
 
 @protocol SDSignUpViewControllerDelegate <NSObject>
 
-- (void)signUpViewControllerShouldBeginSignUp;
+- (id)signUpViewControllerShouldBeginSignUp:(NSDictionary*)credentials;
 - (void)signUpViewControllerDidSuccessfullySignUpWithResponse:(id)response;
-- (void)signUpViewControllerFailedToSignUpWithResponse:(id)response;
+- (void)signUpViewControllerFailedToSignUpWithError:(NSError*)error;
 
 @end
 
 
 @interface SDSignUpViewController : UITableViewController <SDSignUpViewControllerDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) id <SDSignUpViewControllerDelegate> delegate;
-@property (strong, nonatomic)  UITextField *confirmField;
-@property (strong, nonatomic)  UITextField *passwordField;
-@property (strong, nonatomic)  UITextField *emailField;
 
+- (id)initWithArrayOfFields:(NSArray*)fields;
 @end
 

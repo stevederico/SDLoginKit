@@ -8,29 +8,39 @@
 
 #import "SDSignUpViewController.h"
 
-@interface SDSignUpViewController ()
+@interface SDSignUpViewController (){
+    
+    NSArray *_fields;
 
+}
+- (void)didTapSignUp;
 @end
 
 @implementation SDSignUpViewController
 @synthesize delegate = _delegate;
-@synthesize confirmField = _confirmField, passwordField = _passwordField, emailField = _emailField;
 
-- (id)init {
+
+
+- (id)init{
+    
+   return [self initWithArrayOfFields:@[@"Email", @"Password"]];
+
+
+}
+
+- (id)initWithArrayOfFields:(NSArray*)fields{
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        // Custom initialization
+        
+        if ([fields count] == 0) {
+            [NSArray arrayWithObjects:@"Email", @"Password", nil];
+        }
+        
+        _fields = fields;
         self.title = @"Sign Up";
         self.delegate = self;
     }
     return self;
-}
-
-- (void)loadView{
-    
-    [super loadView];
-
-    [self.emailField becomeFirstResponder];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -40,8 +50,8 @@
     [UIView setAnimationDuration:0.0];
     [UIView setAnimationDelay:0.0];
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-    
-    [self.emailField becomeFirstResponder];
+    SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell.textField becomeFirstResponder];
     
     [UIView commitAnimations];
 
@@ -53,27 +63,29 @@
 }
 
 - (void)viewDidUnload {
-    [self setConfirmField:nil];
-    [self setPasswordField:nil];
-    [self setEmailField:nil];
+
     [super viewDidUnload];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    if (textField == _confirmField) {
-        [self.delegate signUpViewControllerShouldBeginSignUp];
-    }else if (textField == _emailField) {
-        [self.passwordField becomeFirstResponder];
-    }else{
-        [self.confirmField becomeFirstResponder];
+    if (textField.tag == [self.tableView numberOfRowsInSection:0]-1) {
+        [self didTapSignUp];
+    }else if (textField.tag+1 == [self.tableView numberOfRowsInSection:0]-1){
+        UITextField *tf = (UITextField*)[self.view viewWithTag:textField.tag+1];
+        [tf setReturnKeyType:UIReturnKeyJoin];
+        [tf becomeFirstResponder];
+    }else {
+        UITextField *tf = (UITextField*)[self.view viewWithTag:textField.tag+1];
+        [tf becomeFirstResponder];
     }
+        
     
     return YES;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return [_fields count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -84,23 +96,19 @@
     if (cell == nil) {
         cell = [[SDPlaceholderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
         cell.textField.delegate = self;
+        [cell.textField setReturnKeyType:UIReturnKeyNext];
+        [cell.textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     }
     
-    if (indexPath.row == 0) {
-        [cell.textField setPlaceholder:@"Email"];
-        self.emailField = cell.textField;
-        [self.emailField setReturnKeyType:UIReturnKeyNext];
-       
-    }else if(indexPath.row == 1){
-        cell.textField.placeholder = @"Password";
+    cell.textField.tag = indexPath.row;
+    
+    cell.textField.placeholder = [_fields objectAtIndex:indexPath.row];
+    if ([cell.textField.placeholder isEqualToString:@"Password"]) {
         cell.textField.secureTextEntry = YES;
-        self.passwordField = cell.textField;
-        [self.passwordField setReturnKeyType:UIReturnKeyNext];
-    }else{
-        cell.textField.placeholder = @"Password Confirm";
-        cell.textField.secureTextEntry = YES;
-        self.confirmField = cell.textField;
-        [self.confirmField setReturnKeyType:UIReturnKeyJoin];
+    }
+    
+    if (indexPath.row == [_fields count]) {
+        [cell.textField setReturnKeyType:UIReturnKeyJoin];
     }
     
     return cell;
@@ -114,7 +122,7 @@
     
     SDFooterButtonView *footerView = [[SDFooterButtonView alloc] initWithStyle:SDFooterButtonStyleGreen];
     [footerView.button setTitle:@"Sign Up" forState:UIControlStateNormal];
-    [footerView.button addTarget:self action:@selector(signUpViewControllerShouldBeginSignUp) forControlEvents:UIControlEventTouchUpInside];
+    [footerView.button addTarget:self action:@selector(didTapSignUp) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
 
 }
@@ -125,19 +133,22 @@
 
 #pragma mark - SignUpViewControllerDelegate
 
-- (void)signUpViewControllerShouldBeginSignUp{
+- (id)signUpViewControllerShouldBeginSignUp:(NSDictionary*)credentials{
     
-    NSLog(@"User Tapped Sign Up Button");
-    
-    //Send SignUp Request to Server
+    //Send SignUp Request to Your Server
     //Process Response
-    if ([self validateSignUp]) {
-        //SuccessFul SignUp
-        [self.delegate signUpViewControllerDidSuccessfullySignUpWithResponse:nil];
-    }else{
-         //Failed SignUp
-        [self.delegate signUpViewControllerFailedToSignUpWithResponse:@"Username already taken"];
-    }
+    //Return NSError for Failure
+    //Returen Anything else including nil for Success
+
+    //EXAMPLE FAILURE
+    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"SignUp Error", @"Title", @"Don't Forget to override ShouldBeginSignUp. Return an NSError to display alerts.", @"Message", nil];
+    return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
+    //EXAMPLE SUCCESS
+    // User *myUser = [User authenicatedUserFromBackend]
+    // return myUser
+
+    //You can also return nil for Success
+    // return nil
     
 }
 
@@ -146,16 +157,46 @@
     
 }
 
-- (void)signUpViewControllerFailedToSignUpWithResponse:(id)response {
+- (void)signUpViewControllerFailedToSignUpWithError:(NSError*)error{
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"SignUp Failed" message:[response description] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
+    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     
 }
 
-- (BOOL)validateSignUp{
+
+#pragma mark - SDSignUpViewController
+
+- (void)didTapSignUp{
     
-    return YES;
+    //insert regex validate call here
+
+    //get credinals
+    NSMutableDictionary *creds = [[NSMutableDictionary alloc] init];
+    //This should loop through all and use their placeholders as keys
+    for (int i = 0; i < [self.tableView numberOfRowsInSection:0];i++) {
+        SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        NSString *k = cell.textField.placeholder;
+        NSString *v = cell.textField.text;
+        [creds setValue:v forKey:k];
+    }
+    
+    NSLog(@"CREDS %@",creds);
+
+    //call delegate
+    id response = [self.delegate signUpViewControllerShouldBeginSignUp:creds];
+
+    if ([response isKindOfClass:[NSError class]]) {
+    //There was an error
+        [self.delegate signUpViewControllerFailedToSignUpWithError:response];
+    } else {
+        [self.delegate signUpViewControllerDidSuccessfullySignUpWithResponse:response];
+    }
+    
+
 }
 
 
