@@ -13,6 +13,7 @@
 @property (nonatomic, strong) SDSignUpViewController *signUpViewController;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UITextField *emailField;
+-(void)didTapSignIn;
 @end
 
 @implementation SDLoginViewController
@@ -46,7 +47,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
 
     if (textField == _passwordField) {
-        [self.delegate loginViewControllerShouldBeginLogin];
+        [self didTapSignIn];
     }else{
         [self.passwordField becomeFirstResponder];
     }
@@ -97,7 +98,7 @@
     
     SDFooterButtonView *footerView = [[SDFooterButtonView alloc] initWithStyle:SDFooterButtonStyleGreen];
     [footerView.button setTitle:@"Sign In" forState:UIControlStateNormal];
-    [footerView.button addTarget:self action:@selector(loginViewControllerShouldBeginLogin) forControlEvents:UIControlEventTouchUpInside];
+    [footerView.button addTarget:self action:@selector(didTapSignIn) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
 }
 
@@ -124,10 +125,9 @@
  
 }
 
-
 #pragma mark - SDLoginViewControllerDelegate
 
-- (void)loginViewControllerShouldBeginLogin{
+- (void)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials{
     
     NSLog(@"User Tapped Sign In Button");
     
@@ -140,8 +140,6 @@
         //Failed Login
         [self.delegate loginViewControllerFailedToLoginWithResponse:@"Email & Password do not match"];
     }
-    
-        
 }
 
 
@@ -170,8 +168,16 @@
     
     _signUpViewController = [[SDSignUpViewController alloc] init];
     [self.navigationController pushViewController:_signUpViewController animated:YES];
-    
+}
 
+- (void)didTapSignIn{
+    
+    //get credinals
+    NSDictionary *creds = [NSDictionary dictionaryWithObjectsAndKeys:self.emailField.text, @"Email",self.passwordField.text, @"Password", nil];
+    
+    //call delegate
+    [self.delegate loginViewControllerShouldBeginLogin:creds];
+    
 }
 
 @end
