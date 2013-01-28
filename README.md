@@ -1,8 +1,8 @@
 SDLoginKit
 =======
-**Ready-To-Use Login/Sign-Up Views and Controllers for Your Backend**
+**Login/Sign-Up ViewControllers Ready-To-Use with your Custom Backend**
 
-Building a authentication system can be tedious and repeative. Why write the same code over and over when you could be spending time working on real application logic? SDLoginKit is a simple library that provides Login and Sign-Up viewcontrollers out-of-the-box. Just subscribe to a few delegate callbacks for success/failure and BAM! You are ready to start managing and creating users. Want to customize the entire experience? No problem just override shouldBeginLogin and all the codez belong to you!
+Building a authentication system can be tedious and repeative. Why write the same code over and over when you could be spending time working on real application logic? SDLoginKit is a simple library that provides Login and Sign-Up viewcontrollers out-of-the-box. Just subscribe to a few delegate callbacks for success/failure and BAM! You are ready to start managing and creating users. Want to customize the entire experience? No problem just override `loginViewControllerShouldBeginLogin` and all the codez belong to you! You can even add your own logo to the login screen. Just set `logoImage` to the `UIImage` of your choice.
 
 > SDLoginKit is named LoginKit, because it has everything you need add a fully-customizable authentication system to your iOS Application.
 
@@ -64,7 +64,7 @@ Done!
 ## Sample Images
 ![User Index](http://f.cl.ly/items/3K390q3k143G0P1j2O2a/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%201.47.16%20PM.png) 
 ![Add User](http://f.cl.ly/items/3m1d1w0J3C1n2u1Q2t1B/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%201.47.22%20PM.png) 
-
+![Logo](http://f.cl.ly/items/1J0w2Z1I2J0v20011h2c/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%202.31.54%20PM.png)
 ## Contact
 
 Steve Derico
