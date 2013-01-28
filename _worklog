@@ -14,6 +14,7 @@ Added Welcome Screen
 Added New Delegate Callback Signatures
 Added Error Alerts
 Routed Sign Up 
+Wrote Readme Description
 
 
 - Add Customizeable Fields
@@ -28,3 +29,6 @@ Routed Sign Up
     - Facebook
     - Twitter
 - Forgot password
+- How-to get Started in Readme
+- Cached Login
+- Sign Out?

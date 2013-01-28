@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SignUpViewControllerDelegate <NSObject>
+@protocol SDSignUpViewControllerDelegate <NSObject>
 
 - (void)signUpViewControllerShouldBeginSignUp;
 - (void)signUpViewControllerDidSuccessfullyLoginWithResponse:(id)response;
@@ -18,8 +18,8 @@
 @end
 
 
-@interface SDSignUpViewController : UITableViewController <SignUpViewControllerDelegate, UITextFieldDelegate>
-@property (nonatomic, weak) id <SignUpViewControllerDelegate> delegate;
+@interface SDSignUpViewController : UITableViewController <SDSignUpViewControllerDelegate, UITextFieldDelegate>
+@property (nonatomic, weak) id <SDSignUpViewControllerDelegate> delegate;
 @property (strong, nonatomic)  UITextField *confirmField;
 @property (strong, nonatomic)  UITextField *passwordField;
 @property (strong, nonatomic)  UITextField *emailField;
