@@ -19,6 +19,9 @@ Imporeved Signatures
 Added More Parameters
 Turn off Autocomplete in Fields
 Improved beginLogin Parameters and Return Types
+Added Message handling for Failures
+Added captial letters in alerts
+Added new default alert
 
 - Class method for show login
 - Add Customizeable Fields

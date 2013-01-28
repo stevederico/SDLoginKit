@@ -131,16 +131,20 @@
 
 - (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials{
     
-    //Send Login Request to Server
+    //Send Login Request to Your Server
     //Process Response
     //Return NSError for Failure
     //Returen Anything else including nil for Success
 
     //EXAMPLE FAILURE
-    //    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"This is an Alert Message", @"Message", nil];
-    //    return [NSError errorWithDomain:@"MyBACKED" code:410 userInfo:dictionaryUserInfo];
-
-    return @"Don't Forget to Override loginViewControllerShouldBeginLogin!";
+    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override ShouldBeginLogin. Return an NSError to display alerts.", @"Message", nil];
+    return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
+    //EXAMPLE SUCCESS
+    // User *myUser = [User authenicatedUserFromBackend]
+    // return myUser
+    
+    //You can also return nil for Success
+    // return nil
     
 }
 
@@ -154,8 +158,8 @@
 
 - (void)loginViewControllerFailedToLoginWithError:(NSError*)error{
     
-    NSString *title = [error.userInfo objectForKey:@"Title"];
-    NSString *message = [error.userInfo objectForKey:@"Message"];
+    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
+    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
