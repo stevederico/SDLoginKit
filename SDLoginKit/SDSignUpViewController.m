@@ -133,10 +133,10 @@
     //Process Response
     if ([self validateSignUp]) {
         //SuccessFul SignUp
-        [self signUpViewControllerDidSuccessfullySignUpWithResponse:nil];
+        [self.delegate signUpViewControllerDidSuccessfullySignUpWithResponse:nil];
     }else{
          //Failed SignUp
-        [self signUpViewControllerFailedToSignUpWithResponse:@"Username already taken"];
+        [self.delegate signUpViewControllerFailedToSignUpWithResponse:@"Username already taken"];
     }
     
 }

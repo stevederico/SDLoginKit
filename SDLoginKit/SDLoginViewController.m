@@ -135,10 +135,10 @@
     //Process Response
     if ([self validateLogin]) {
         //SuccessFul Login
-        [self loginViewControllerDidSuccessfullyLoginWithResponse:nil];
+        [self.delegate loginViewControllerDidSuccessfullyLoginWithResponse:nil];
     }else{
         //Failed Login
-        [self loginViewControllerFailedToLoginWithResponse:@"Email & Password do not match"];
+        [self.delegate loginViewControllerFailedToLoginWithResponse:@"Email & Password do not match"];
     }
     
         
