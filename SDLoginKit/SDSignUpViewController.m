@@ -133,20 +133,20 @@
     //Process Response
     if ([self validateSignUp]) {
         //SuccessFul SignUp
-        [self signUpViewControllerDidSuccessfullyLoginWithResponse:nil];
+        [self signUpViewControllerDidSuccessfullySignUpWithResponse:nil];
     }else{
          //Failed SignUp
-        [self signUpViewControllerFailedToLoginWithResponse:@"Username already taken"];
+        [self signUpViewControllerFailedToSignUpWithResponse:@"Username already taken"];
     }
     
 }
 
-- (void)signUpViewControllerDidSuccessfullyLoginWithResponse:(id)response {
+- (void)signUpViewControllerDidSuccessfullySignUpWithResponse:(id)response {
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-- (void)signUpViewControllerFailedToLoginWithResponse:(id)response {
+- (void)signUpViewControllerFailedToSignUpWithResponse:(id)response {
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"SignUp Failed" message:[response description] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];

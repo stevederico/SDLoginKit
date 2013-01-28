@@ -12,8 +12,8 @@
 @protocol SDSignUpViewControllerDelegate <NSObject>
 
 - (void)signUpViewControllerShouldBeginSignUp;
-- (void)signUpViewControllerDidSuccessfullyLoginWithResponse:(id)response;
-- (void)signUpViewControllerFailedToLoginWithResponse:(id)response;
+- (void)signUpViewControllerDidSuccessfullySignUpWithResponse:(id)response;
+- (void)signUpViewControllerFailedToSignUpWithResponse:(id)response;
 
 @end
 
