@@ -107,7 +107,7 @@
         cell.textField.secureTextEntry = YES;
     }
     
-    if (indexPath.row == [_fields count]) {
+    if (indexPath.row == [_fields count] -1) {
         [cell.textField setReturnKeyType:UIReturnKeyJoin];
     }
     

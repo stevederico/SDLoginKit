@@ -28,6 +28,8 @@ Added base init override
 Added Next and Submit Button to SignUp
 Removed confirmField,pasField, emailField properties & Add tags
 Custom Sign Up Fields
+-Fix Join Button on Default setup
+
 
 - Custom SignIn Fields?
 - Add an SDLoginViewController property for ArrayFields
