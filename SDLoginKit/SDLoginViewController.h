@@ -11,9 +11,9 @@
 
 @protocol SDLoginViewControllerDelelgate <NSObject>
 
-- (void)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials;
+- (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials;
 - (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response;
-- (void)loginViewControllerFailedToLoginWithResponse:(id)response;
+- (void)loginViewControllerFailedToLoginWithError:(NSError*)error;
 
 
 @end

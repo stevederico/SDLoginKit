@@ -129,19 +129,19 @@
 
 #pragma mark - SDLoginViewControllerDelegate
 
-- (void)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials{
-    
-    NSLog(@"User Tapped Sign In Button");
+- (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials{
     
     //Send Login Request to Server
     //Process Response
-    if ([self validateLogin]) {
-        //SuccessFul Login
-        [self.delegate loginViewControllerDidSuccessfullyLoginWithResponse:nil];
-    }else{
-        //Failed Login
-        [self.delegate loginViewControllerFailedToLoginWithResponse:@"Email & Password do not match"];
-    }
+    //Return NSError for Failure
+    //Returen Anything else including nil for Success
+
+    //EXAMPLE FAILURE
+    //    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"This is an Alert Message", @"Message", nil];
+    //    return [NSError errorWithDomain:@"MyBACKED" code:410 userInfo:dictionaryUserInfo];
+
+    return @"Don't Forget to Override loginViewControllerShouldBeginLogin!";
+    
 }
 
 
@@ -152,9 +152,12 @@
 }
 
 
-- (void)loginViewControllerFailedToLoginWithResponse:(id)response{
+- (void)loginViewControllerFailedToLoginWithError:(NSError*)error{
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[response description] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    NSString *title = [error.userInfo objectForKey:@"Title"];
+    NSString *message = [error.userInfo objectForKey:@"Message"];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     
 }
@@ -162,9 +165,6 @@
 
 #pragma mark ViewController
 
-- (BOOL)validateLogin{
-    return YES;
-}
 
 - (void)didTapSignUp{
     
@@ -174,11 +174,25 @@
 
 - (void)didTapSignIn{
     
+    //insert regex validate call here
+    
     //get credinals
     NSDictionary *creds = [NSDictionary dictionaryWithObjectsAndKeys:self.emailField.text, @"Email",self.passwordField.text, @"Password", nil];
     
     //call delegate
-    [self.delegate loginViewControllerShouldBeginLogin:creds];
+    id response = [self.delegate loginViewControllerShouldBeginLogin:creds];
+    
+    if ([response isKindOfClass:[NSError class]]) {
+            //There was an error
+         [self.delegate loginViewControllerFailedToLoginWithError:response];
+    } else {
+        [self.delegate loginViewControllerDidSuccessfullyLoginWithResponse:response];
+    
+    }
+
+  
+    
+    
     
 }
 

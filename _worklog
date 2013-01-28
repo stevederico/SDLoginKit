@@ -18,10 +18,12 @@ Wrote Readme Description
 Imporeved Signatures
 Added More Parameters
 Turn off Autocomplete in Fields
+Improved beginLogin Parameters and Return Types
 
+- Class method for show login
 - Add Customizeable Fields
 - Add Validations
--Enable Encryption Between Client-Server
+- Enable Encryption Between Client-Server
 -Add AFNetworking
 - Add PreDefined backends
     -Systems
