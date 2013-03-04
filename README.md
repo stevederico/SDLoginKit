@@ -62,19 +62,17 @@ Done!
 }
 ```
 ## Sample Images
-![Sign In](http://f.cl.ly/items/3K390q3k143G0P1j2O2a/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%201.47.16%20PM.png) 
-![Add User](http://f.cl.ly/items/3m1d1w0J3C1n2u1Q2t1B/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%201.47.22%20PM.png) 
-![Logo](http://f.cl.ly/items/1J0w2Z1I2J0v20011h2c/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%202.31.54%20PM.png)
 ![Sign In](http://dl.dropbox.com/u/12035142/Screenshots/3.png)
 ![Password Reset](http://dl.dropbox.com/u/12035142/Screenshots/4.png)
 ![Sign Up](http://dl.dropbox.com/u/12035142/Screenshots/5.png)
+![Logo](http://f.cl.ly/items/1J0w2Z1I2J0v20011h2c/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%202.31.54%20PM.png)
 ## Contact
 
 Steve Derico
 
 - http://github.com/stevederico
 - http://twitter.com/stevederico
-- steve@deri.co
+- steve@stevederico.com
 
 ## License
 
