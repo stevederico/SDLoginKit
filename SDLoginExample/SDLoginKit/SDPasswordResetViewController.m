@@ -45,6 +45,21 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.0];
+    [UIView setAnimationDelay:0.0];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell.textField becomeFirstResponder];
+    
+    [UIView commitAnimations];
+    
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
@@ -73,6 +88,7 @@
     
     cell.textField.tag = indexPath.row;
     cell.textField.placeholder = @"Email";
+
     
     return cell;
 }

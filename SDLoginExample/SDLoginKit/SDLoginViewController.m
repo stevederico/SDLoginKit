@@ -52,6 +52,9 @@
         UIBarButtonItem *passwordButton = [[UIBarButtonItem alloc] initWithTitle:@"Forgot?" style:UIBarButtonItemStylePlain target:self action:@selector(didTapPasswordReset)];
         self.navigationItem.leftBarButtonItem = passwordButton;
         
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(didTapPasswordReset)];
+        self.navigationItem.backBarButtonItem  = backButton;
+        
     }
     return self;
 }
@@ -148,11 +151,12 @@
         //Send Login Request to Your Server
         //Process Response
         //Return NSError for Failure
-        //Returen Anything else including nil for Success
+        //Return Anything else including nil for Success
     
         //EXAMPLE FAILURE
-    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override ShouldBeginLogin. Return an NSError to display alerts.", @"Message", nil];
-    return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
+        NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override ShouldBeginLogin. Return an NSError to display alerts.", @"Message", nil];
+        return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
+
         //EXAMPLE SUCCESS
         // User *myUser = [User authenicatedUserFromBackend]
         // return myUser

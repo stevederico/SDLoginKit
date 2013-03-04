@@ -20,7 +20,7 @@
 		7B255D6B16B5BDCF0036AFB8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B255D6916B5BDCF0036AFB8 /* ViewController.xib */; };
 		7B6800B616B5BE9D005D40B7 /* _worklog in Resources */ = {isa = PBXBuildFile; fileRef = 7B6800B516B5BE9D005D40B7 /* _worklog */; };
 		7B68011116B5C7FB005D40B7 /* welcome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011016B5C7FB005D40B7 /* welcome.jpg */; };
-		7B68011716B5E218005D40B7 /* superman.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011616B5E218005D40B7 /* superman.png */; };
+		7B68011716B5E218005D40B7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011616B5E218005D40B7 /* logo.png */; };
 		7BD5D02D16E13F7E006E6293 /* SDFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D01F16E13F7E006E6293 /* SDFooterButtonView.m */; };
 		7BD5D02E16E13F7E006E6293 /* SDPatternCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02216E13F7E006E6293 /* SDPatternCell.m */; };
 		7BD5D02F16E13F7E006E6293 /* SDPlaceholderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02416E13F7E006E6293 /* SDPlaceholderCell.m */; };
@@ -32,6 +32,9 @@
 		7BD5D03F16E13FCB006E6293 /* SDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03916E13FCB006E6293 /* SDLoginViewController.m */; };
 		7BD5D04016E13FCB006E6293 /* SDPasswordResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */; };
 		7BD5D04116E13FCB006E6293 /* SDSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */; };
+		7BD5D04616E1475D006E6293 /* gray_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD5D04316E1475D006E6293 /* gray_button.png */; };
+		7BD5D04716E1475D006E6293 /* Green_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD5D04416E1475D006E6293 /* Green_background.png */; };
+		7BD5D04816E1475D006E6293 /* Red_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD5D04516E1475D006E6293 /* Red_Background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +56,7 @@
 		7B255D6A16B5BDCF0036AFB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		7B6800B516B5BE9D005D40B7 /* _worklog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = _worklog; path = ../../_worklog; sourceTree = "<group>"; };
 		7B68011016B5C7FB005D40B7 /* welcome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome.jpg; sourceTree = "<group>"; };
-		7B68011616B5E218005D40B7 /* superman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superman.png; sourceTree = "<group>"; };
+		7B68011616B5E218005D40B7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		7BD5D01E16E13F7E006E6293 /* SDFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDFooterButtonView.h; sourceTree = "<group>"; };
 		7BD5D01F16E13F7E006E6293 /* SDFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDFooterButtonView.m; sourceTree = "<group>"; };
 		7BD5D02016E13F7E006E6293 /* SDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKit.h; sourceTree = "<group>"; };
@@ -78,6 +81,9 @@
 		7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPasswordResetViewController.m; sourceTree = "<group>"; };
 		7BD5D03C16E13FCB006E6293 /* SDSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSignUpViewController.h; sourceTree = "<group>"; };
 		7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSignUpViewController.m; sourceTree = "<group>"; };
+		7BD5D04316E1475D006E6293 /* gray_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_button.png; sourceTree = "<group>"; };
+		7BD5D04416E1475D006E6293 /* Green_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green_background.png; sourceTree = "<group>"; };
+		7BD5D04516E1475D006E6293 /* Red_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red_Background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +146,7 @@
 		7B255D5516B5BDCF0036AFB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7B68011616B5E218005D40B7 /* superman.png */,
+				7B68011616B5E218005D40B7 /* logo.png */,
 				7B68011016B5C7FB005D40B7 /* welcome.jpg */,
 				7B255D5616B5BDCF0036AFB8 /* SDLoginExample-Info.plist */,
 				7B255D5716B5BDCF0036AFB8 /* InfoPlist.strings */,
@@ -156,6 +162,7 @@
 		7BD5D01D16E13F7E006E6293 /* SDKit */ = {
 			isa = PBXGroup;
 			children = (
+				7BD5D04216E1475D006E6293 /* Assets */,
 				7BD5D01E16E13F7E006E6293 /* SDFooterButtonView.h */,
 				7BD5D01F16E13F7E006E6293 /* SDFooterButtonView.m */,
 				7BD5D02016E13F7E006E6293 /* SDKit.h */,
@@ -189,6 +196,17 @@
 				7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */,
 			);
 			path = SDLoginKit;
+			sourceTree = "<group>";
+		};
+		7BD5D04216E1475D006E6293 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7BD5D04316E1475D006E6293 /* gray_button.png */,
+				7BD5D04416E1475D006E6293 /* Green_background.png */,
+				7BD5D04516E1475D006E6293 /* Red_Background.png */,
+			);
+			name = Assets;
+			path = ../SDLoginExample/Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +267,10 @@
 				7B255D6B16B5BDCF0036AFB8 /* ViewController.xib in Resources */,
 				7B6800B616B5BE9D005D40B7 /* _worklog in Resources */,
 				7B68011116B5C7FB005D40B7 /* welcome.jpg in Resources */,
-				7B68011716B5E218005D40B7 /* superman.png in Resources */,
+				7B68011716B5E218005D40B7 /* logo.png in Resources */,
+				7BD5D04616E1475D006E6293 /* gray_button.png in Resources */,
+				7BD5D04716E1475D006E6293 /* Green_background.png in Resources */,
+				7BD5D04816E1475D006E6293 /* Red_Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

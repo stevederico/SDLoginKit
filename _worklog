@@ -34,6 +34,18 @@ Fix Join Button on Default setup
 Added Present Class method for LoginView
 Fixed Capitalization in login
 
+
+2/27
+Stop Auto Captialize
+Stop Auto Complete
+Added Password Reset
+Added HUD while loading
+
+Added SDKit Assets
+Make Reset Password Field FirstResponder
+
+
+- Add Keyboard Bar
 - add login test delegate
 - singleton class method
 - relauch class method

@@ -10,7 +10,7 @@
 #import "SDSignUpViewController.h"
 #import <UIKit/UIKit.h>
 
-@protocol SDLoginViewControllerDelelgate <NSObject>
+@protocol SDLoginViewControllerDelelgate <NSObject> 
 
 - (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials;
 - (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response;
@@ -20,7 +20,7 @@
 @end
 
 @interface SDLoginViewController : UITableViewController <UITextFieldDelegate, SDLoginViewControllerDelelgate>
-@property (nonatomic, weak) id <SDLoginViewControllerDelelgate> delegate;
+@property (nonatomic, weak) id <SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate> delegate;
 @property (nonatomic, strong) UIImage *logoImage;
 + (void)presentModalLoginViewControllerOnViewController:(UIViewController*)viewController withDelegate:(id)delegate;
 @end
