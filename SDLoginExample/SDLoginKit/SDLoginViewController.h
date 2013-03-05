@@ -10,14 +10,13 @@
 #import "SDSignUpViewController.h"
 #import <UIKit/UIKit.h>
 
-@protocol SDLoginViewControllerDelelgate <NSObject> 
-
-- (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials;
-- (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response;
-- (void)loginViewControllerFailedToLoginWithError:(NSError*)error;
-
+@protocol SDLoginViewControllerDelelgate <NSObject>
+- (void)loginViewControllerAuthenticateWithCredential:(NSURLCredential*)credential;
+- (void)loginViewControllerDidAuthenticateWithCredential:(NSURLCredential*)credential andResponse:(id)response;
+- (void)loginViewControllerFailedToAuthenticateWithError:(NSError*)error;
 
 @end
+
 
 @interface SDLoginViewController : UITableViewController <UITextFieldDelegate, SDLoginViewControllerDelelgate>
 @property (nonatomic, weak) id <SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate> delegate;

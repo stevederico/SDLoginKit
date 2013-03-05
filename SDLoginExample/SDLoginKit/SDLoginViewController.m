@@ -144,46 +144,6 @@
     
 }
 
-#pragma mark - SDLoginViewControllerDelegate
-
-- (id)loginViewControllerShouldBeginLogin:(NSDictionary*)credentials{
-    
-        //Send Login Request to Your Server
-        
-        //Process Response
-        //Return NSError for Failure
-        //Return Anything else including nil for Success
-    
-        //EXAMPLE FAILURE
-        NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override ShouldBeginLogin. Return an NSError to display alerts.", @"Message", nil];
-        return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
-
-        //EXAMPLE SUCCESS
-        // User *myUser = [User authenicatedUserFromBackend]
-        // return myUser
-    
-        //You can also return nil for Success
-        // return nil
-    
-}
-
-
-- (void)loginViewControllerDidSuccessfullyLoginWithResponse:(id)response {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
-
-- (void)loginViewControllerFailedToLoginWithError:(NSError*)error{
-    
-    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
-    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [alert show];
-    
-}
 
 
 #pragma mark ViewController
@@ -197,25 +157,14 @@
 }
 
 - (void)didTapSignIn{
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-        //insert regex validate call here
     
-        //get credinals
-    NSDictionary *creds = [NSDictionary dictionaryWithObjectsAndKeys:self.emailField.text.lowercaseString, @"Email",self.passwordField.text, @"Password", nil];
+    NSURLCredential *creds = [NSURLCredential credentialWithUser:self.emailField.text password:self.passwordField.text persistence:NSURLCredentialPersistenceNone];
     
-        //call delegate
-    id response = [self.delegate loginViewControllerShouldBeginLogin:creds];
-    
-    if ([response isKindOfClass:[NSError class]]) {
-            //There was an error
-        [self.delegate loginViewControllerFailedToLoginWithError:response];
-         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    } else {
-        [self.delegate loginViewControllerDidSuccessfullyLoginWithResponse:response];
-         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        
-    }
+    //call delegate
+    [self.delegate loginViewControllerAuthenticateWithCredential:creds];
     
 }
 
@@ -223,7 +172,40 @@
     
     SDPasswordResetViewController *pvc = [[SDPasswordResetViewController alloc] init];
     [self.navigationController pushViewController:pvc animated:YES];
+    
+    
+}
 
+#pragma mark SDLoginViewControllerDelegate
+
+- (void)loginViewControllerAuthenticateWithCredential:(NSURLCredential*)credential{
+    
+    NSLog(@"Credential %@",[credential description]);
+    
+    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override loginViewControllerAuthenticateWithCredential :)", @"Message", nil];
+    
+    
+    [self loginViewControllerDidAuthenticateWithCredential:credential andResponse:nil];
+    
+    [self loginViewControllerFailedToAuthenticateWithError:[NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo]];
+    
+    
+}
+
+
+- (void)loginViewControllerDidAuthenticateWithCredential:(NSURLCredential*)credential andResponse:(id)response{
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)loginViewControllerFailedToAuthenticateWithError:(NSError*)error{
+    
+    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
+    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
     
 }
 
