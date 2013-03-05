@@ -45,6 +45,8 @@ Added SDKit Assets
 Make Reset Password Field FirstResponder
 
 
+
+- AFNetworking 
 - Add Keyboard Bar
 - add login test delegate
 - singleton class method

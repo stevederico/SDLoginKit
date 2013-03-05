@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557A4B2B16E67BBF00DD6276 /* SDFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B1D16E67BBF00DD6276 /* SDFooterButtonView.m */; };
+		557A4B2C16E67BBF00DD6276 /* SDPatternCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B2016E67BBF00DD6276 /* SDPatternCell.m */; };
+		557A4B2D16E67BBF00DD6276 /* SDPlaceholderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B2216E67BBF00DD6276 /* SDPlaceholderCell.m */; };
+		557A4B2E16E67BBF00DD6276 /* SDRoundedImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B2416E67BBF00DD6276 /* SDRoundedImageViewCell.m */; };
+		557A4B2F16E67BBF00DD6276 /* SDSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B2616E67BBF00DD6276 /* SDSwitchCell.m */; };
+		557A4B3016E67BBF00DD6276 /* SDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B2816E67BBF00DD6276 /* SDTextFieldCell.m */; };
+		557A4B3116E67BBF00DD6276 /* SDTextFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A4B2A16E67BBF00DD6276 /* SDTextFooterButtonView.m */; };
 		7B255D4F16B5BDCF0036AFB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B255D4E16B5BDCF0036AFB8 /* UIKit.framework */; };
 		7B255D5116B5BDCF0036AFB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B255D5016B5BDCF0036AFB8 /* Foundation.framework */; };
 		7B255D5316B5BDCF0036AFB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B255D5216B5BDCF0036AFB8 /* CoreGraphics.framework */; };
@@ -21,23 +28,28 @@
 		7B6800B616B5BE9D005D40B7 /* _worklog in Resources */ = {isa = PBXBuildFile; fileRef = 7B6800B516B5BE9D005D40B7 /* _worklog */; };
 		7B68011116B5C7FB005D40B7 /* welcome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011016B5C7FB005D40B7 /* welcome.jpg */; };
 		7B68011716B5E218005D40B7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011616B5E218005D40B7 /* logo.png */; };
-		7BD5D02D16E13F7E006E6293 /* SDFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D01F16E13F7E006E6293 /* SDFooterButtonView.m */; };
-		7BD5D02E16E13F7E006E6293 /* SDPatternCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02216E13F7E006E6293 /* SDPatternCell.m */; };
-		7BD5D02F16E13F7E006E6293 /* SDPlaceholderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02416E13F7E006E6293 /* SDPlaceholderCell.m */; };
-		7BD5D03016E13F7E006E6293 /* SDRoundedImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02616E13F7E006E6293 /* SDRoundedImageViewCell.m */; };
-		7BD5D03116E13F7E006E6293 /* SDSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02816E13F7E006E6293 /* SDSwitchCell.m */; };
-		7BD5D03216E13F7E006E6293 /* SDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02A16E13F7E006E6293 /* SDTextFieldCell.m */; };
-		7BD5D03316E13F7E006E6293 /* SDTextFooterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D02C16E13F7E006E6293 /* SDTextFooterButtonView.m */; };
 		7BD5D03E16E13FCB006E6293 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03616E13FCB006E6293 /* MBProgressHUD.m */; };
 		7BD5D03F16E13FCB006E6293 /* SDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03916E13FCB006E6293 /* SDLoginViewController.m */; };
 		7BD5D04016E13FCB006E6293 /* SDPasswordResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */; };
 		7BD5D04116E13FCB006E6293 /* SDSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */; };
-		7BD5D04616E1475D006E6293 /* gray_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD5D04316E1475D006E6293 /* gray_button.png */; };
-		7BD5D04716E1475D006E6293 /* Green_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD5D04416E1475D006E6293 /* Green_background.png */; };
-		7BD5D04816E1475D006E6293 /* Red_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD5D04516E1475D006E6293 /* Red_Background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		557A4B1C16E67BBF00DD6276 /* SDFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDFooterButtonView.h; sourceTree = "<group>"; };
+		557A4B1D16E67BBF00DD6276 /* SDFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDFooterButtonView.m; sourceTree = "<group>"; };
+		557A4B1E16E67BBF00DD6276 /* SDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKit.h; sourceTree = "<group>"; };
+		557A4B1F16E67BBF00DD6276 /* SDPatternCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPatternCell.h; sourceTree = "<group>"; };
+		557A4B2016E67BBF00DD6276 /* SDPatternCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPatternCell.m; sourceTree = "<group>"; };
+		557A4B2116E67BBF00DD6276 /* SDPlaceholderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaceholderCell.h; sourceTree = "<group>"; };
+		557A4B2216E67BBF00DD6276 /* SDPlaceholderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaceholderCell.m; sourceTree = "<group>"; };
+		557A4B2316E67BBF00DD6276 /* SDRoundedImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedImageViewCell.h; sourceTree = "<group>"; };
+		557A4B2416E67BBF00DD6276 /* SDRoundedImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedImageViewCell.m; sourceTree = "<group>"; };
+		557A4B2516E67BBF00DD6276 /* SDSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSwitchCell.h; sourceTree = "<group>"; };
+		557A4B2616E67BBF00DD6276 /* SDSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSwitchCell.m; sourceTree = "<group>"; };
+		557A4B2716E67BBF00DD6276 /* SDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextFieldCell.h; sourceTree = "<group>"; };
+		557A4B2816E67BBF00DD6276 /* SDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextFieldCell.m; sourceTree = "<group>"; };
+		557A4B2916E67BBF00DD6276 /* SDTextFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextFooterButtonView.h; sourceTree = "<group>"; };
+		557A4B2A16E67BBF00DD6276 /* SDTextFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextFooterButtonView.m; sourceTree = "<group>"; };
 		7B255D4A16B5BDCF0036AFB8 /* SDLoginExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLoginExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B255D4E16B5BDCF0036AFB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7B255D5016B5BDCF0036AFB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,21 +69,6 @@
 		7B6800B516B5BE9D005D40B7 /* _worklog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = _worklog; path = ../../_worklog; sourceTree = "<group>"; };
 		7B68011016B5C7FB005D40B7 /* welcome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome.jpg; sourceTree = "<group>"; };
 		7B68011616B5E218005D40B7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		7BD5D01E16E13F7E006E6293 /* SDFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDFooterButtonView.h; sourceTree = "<group>"; };
-		7BD5D01F16E13F7E006E6293 /* SDFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDFooterButtonView.m; sourceTree = "<group>"; };
-		7BD5D02016E13F7E006E6293 /* SDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKit.h; sourceTree = "<group>"; };
-		7BD5D02116E13F7E006E6293 /* SDPatternCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPatternCell.h; sourceTree = "<group>"; };
-		7BD5D02216E13F7E006E6293 /* SDPatternCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPatternCell.m; sourceTree = "<group>"; };
-		7BD5D02316E13F7E006E6293 /* SDPlaceholderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPlaceholderCell.h; sourceTree = "<group>"; };
-		7BD5D02416E13F7E006E6293 /* SDPlaceholderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPlaceholderCell.m; sourceTree = "<group>"; };
-		7BD5D02516E13F7E006E6293 /* SDRoundedImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRoundedImageViewCell.h; sourceTree = "<group>"; };
-		7BD5D02616E13F7E006E6293 /* SDRoundedImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRoundedImageViewCell.m; sourceTree = "<group>"; };
-		7BD5D02716E13F7E006E6293 /* SDSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSwitchCell.h; sourceTree = "<group>"; };
-		7BD5D02816E13F7E006E6293 /* SDSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSwitchCell.m; sourceTree = "<group>"; };
-		7BD5D02916E13F7E006E6293 /* SDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextFieldCell.h; sourceTree = "<group>"; };
-		7BD5D02A16E13F7E006E6293 /* SDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextFieldCell.m; sourceTree = "<group>"; };
-		7BD5D02B16E13F7E006E6293 /* SDTextFooterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextFooterButtonView.h; sourceTree = "<group>"; };
-		7BD5D02C16E13F7E006E6293 /* SDTextFooterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextFooterButtonView.m; sourceTree = "<group>"; };
 		7BD5D03516E13FCB006E6293 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		7BD5D03616E13FCB006E6293 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		7BD5D03716E13FCB006E6293 /* SDLoginKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLoginKit.h; sourceTree = "<group>"; };
@@ -81,9 +78,6 @@
 		7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPasswordResetViewController.m; sourceTree = "<group>"; };
 		7BD5D03C16E13FCB006E6293 /* SDSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSignUpViewController.h; sourceTree = "<group>"; };
 		7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSignUpViewController.m; sourceTree = "<group>"; };
-		7BD5D04316E1475D006E6293 /* gray_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_button.png; sourceTree = "<group>"; };
-		7BD5D04416E1475D006E6293 /* Green_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green_background.png; sourceTree = "<group>"; };
-		7BD5D04516E1475D006E6293 /* Red_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red_Background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +94,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		557A4B1B16E67BBF00DD6276 /* SDKit */ = {
+			isa = PBXGroup;
+			children = (
+				557A4B1C16E67BBF00DD6276 /* SDFooterButtonView.h */,
+				557A4B1D16E67BBF00DD6276 /* SDFooterButtonView.m */,
+				557A4B1E16E67BBF00DD6276 /* SDKit.h */,
+				557A4B1F16E67BBF00DD6276 /* SDPatternCell.h */,
+				557A4B2016E67BBF00DD6276 /* SDPatternCell.m */,
+				557A4B2116E67BBF00DD6276 /* SDPlaceholderCell.h */,
+				557A4B2216E67BBF00DD6276 /* SDPlaceholderCell.m */,
+				557A4B2316E67BBF00DD6276 /* SDRoundedImageViewCell.h */,
+				557A4B2416E67BBF00DD6276 /* SDRoundedImageViewCell.m */,
+				557A4B2516E67BBF00DD6276 /* SDSwitchCell.h */,
+				557A4B2616E67BBF00DD6276 /* SDSwitchCell.m */,
+				557A4B2716E67BBF00DD6276 /* SDTextFieldCell.h */,
+				557A4B2816E67BBF00DD6276 /* SDTextFieldCell.m */,
+				557A4B2916E67BBF00DD6276 /* SDTextFooterButtonView.h */,
+				557A4B2A16E67BBF00DD6276 /* SDTextFooterButtonView.m */,
+			);
+			name = SDKit;
+			path = SDLoginKit/SDKit;
+			sourceTree = "<group>";
+		};
 		7B255D3F16B5BDCF0036AFB8 = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +137,8 @@
 		7B255D4D16B5BDCF0036AFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				557A4B1B16E67BBF00DD6276 /* SDKit */,
 				7BD5D03416E13FCB006E6293 /* SDLoginKit */,
-				7BD5D01D16E13F7E006E6293 /* SDKit */,
 				7B255D4E16B5BDCF0036AFB8 /* UIKit.framework */,
 				7B255D5016B5BDCF0036AFB8 /* Foundation.framework */,
 				7B255D5216B5BDCF0036AFB8 /* CoreGraphics.framework */,
@@ -159,29 +176,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7BD5D01D16E13F7E006E6293 /* SDKit */ = {
-			isa = PBXGroup;
-			children = (
-				7BD5D04216E1475D006E6293 /* Assets */,
-				7BD5D01E16E13F7E006E6293 /* SDFooterButtonView.h */,
-				7BD5D01F16E13F7E006E6293 /* SDFooterButtonView.m */,
-				7BD5D02016E13F7E006E6293 /* SDKit.h */,
-				7BD5D02116E13F7E006E6293 /* SDPatternCell.h */,
-				7BD5D02216E13F7E006E6293 /* SDPatternCell.m */,
-				7BD5D02316E13F7E006E6293 /* SDPlaceholderCell.h */,
-				7BD5D02416E13F7E006E6293 /* SDPlaceholderCell.m */,
-				7BD5D02516E13F7E006E6293 /* SDRoundedImageViewCell.h */,
-				7BD5D02616E13F7E006E6293 /* SDRoundedImageViewCell.m */,
-				7BD5D02716E13F7E006E6293 /* SDSwitchCell.h */,
-				7BD5D02816E13F7E006E6293 /* SDSwitchCell.m */,
-				7BD5D02916E13F7E006E6293 /* SDTextFieldCell.h */,
-				7BD5D02A16E13F7E006E6293 /* SDTextFieldCell.m */,
-				7BD5D02B16E13F7E006E6293 /* SDTextFooterButtonView.h */,
-				7BD5D02C16E13F7E006E6293 /* SDTextFooterButtonView.m */,
-			);
-			path = SDKit;
-			sourceTree = "<group>";
-		};
 		7BD5D03416E13FCB006E6293 /* SDLoginKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,17 +190,6 @@
 				7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */,
 			);
 			path = SDLoginKit;
-			sourceTree = "<group>";
-		};
-		7BD5D04216E1475D006E6293 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				7BD5D04316E1475D006E6293 /* gray_button.png */,
-				7BD5D04416E1475D006E6293 /* Green_background.png */,
-				7BD5D04516E1475D006E6293 /* Red_Background.png */,
-			);
-			name = Assets;
-			path = ../SDLoginExample/Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +251,6 @@
 				7B6800B616B5BE9D005D40B7 /* _worklog in Resources */,
 				7B68011116B5C7FB005D40B7 /* welcome.jpg in Resources */,
 				7B68011716B5E218005D40B7 /* logo.png in Resources */,
-				7BD5D04616E1475D006E6293 /* gray_button.png in Resources */,
-				7BD5D04716E1475D006E6293 /* Green_background.png in Resources */,
-				7BD5D04816E1475D006E6293 /* Red_Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,17 +264,17 @@
 				7B255D5B16B5BDCF0036AFB8 /* main.m in Sources */,
 				7B255D5F16B5BDCF0036AFB8 /* AppDelegate.m in Sources */,
 				7B255D6816B5BDCF0036AFB8 /* ViewController.m in Sources */,
-				7BD5D02D16E13F7E006E6293 /* SDFooterButtonView.m in Sources */,
-				7BD5D02E16E13F7E006E6293 /* SDPatternCell.m in Sources */,
-				7BD5D02F16E13F7E006E6293 /* SDPlaceholderCell.m in Sources */,
-				7BD5D03016E13F7E006E6293 /* SDRoundedImageViewCell.m in Sources */,
-				7BD5D03116E13F7E006E6293 /* SDSwitchCell.m in Sources */,
-				7BD5D03216E13F7E006E6293 /* SDTextFieldCell.m in Sources */,
-				7BD5D03316E13F7E006E6293 /* SDTextFooterButtonView.m in Sources */,
 				7BD5D03E16E13FCB006E6293 /* MBProgressHUD.m in Sources */,
 				7BD5D03F16E13FCB006E6293 /* SDLoginViewController.m in Sources */,
 				7BD5D04016E13FCB006E6293 /* SDPasswordResetViewController.m in Sources */,
 				7BD5D04116E13FCB006E6293 /* SDSignUpViewController.m in Sources */,
+				557A4B2B16E67BBF00DD6276 /* SDFooterButtonView.m in Sources */,
+				557A4B2C16E67BBF00DD6276 /* SDPatternCell.m in Sources */,
+				557A4B2D16E67BBF00DD6276 /* SDPlaceholderCell.m in Sources */,
+				557A4B2E16E67BBF00DD6276 /* SDRoundedImageViewCell.m in Sources */,
+				557A4B2F16E67BBF00DD6276 /* SDSwitchCell.m in Sources */,
+				557A4B3016E67BBF00DD6276 /* SDTextFieldCell.m in Sources */,
+				557A4B3116E67BBF00DD6276 /* SDTextFooterButtonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
