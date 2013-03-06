@@ -23,12 +23,6 @@ Overall, this is a great way to get your authentication up and running then you 
 
 ## Getting Started
 
-### Create Core Data Models
-
-1. Add `CoreData.framework` into your project
-2. Create Core Data Model
-3. `#import "SDScaffoldKit.h"` and create an instance with desginated initializer `initWithEntityName:soryBy:context:andStyle:`
-
 ```objective-c
   SDScaffoldIndexViewController *scaffoldViewController = [[SDScaffoldIndexViewController alloc] 
     initWithEntityName:@"User" sortBy:@"lastname" context:[self managedObjectContext] andStyle:UITableViewStyleGrouped];
