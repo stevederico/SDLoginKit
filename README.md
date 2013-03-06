@@ -21,21 +21,6 @@ Overall, this is a great way to get your authentication up and running then you 
 
 > If you enjoy this project, I would encourage you to check out [SDScaffoldKit](http://www.github.com/stevederico/SDScaffoldKit) the easiest way to create views for your Core Data models. I also highly recommend you follow [Mattt Thompson](http://www.github.com/mattt) and his series of open source libraries covering the mission-critical aspects of an iOS app's infrastructure. Be sure to check out its sister projects: [GroundControl](https://github.com/mattt/GroundControl), [SkyLab](https://github.com/mattt/SkyLab), [CargoBay](https://github.com/mattt/CargoBay), and [houston](https://github.com/mattt/houston).
 
-## Getting Started
-
-```objective-c
-  SDScaffoldIndexViewController *scaffoldViewController = [[SDScaffoldIndexViewController alloc] 
-    initWithEntityName:@"User" sortBy:@"lastname" context:[self managedObjectContext] andStyle:UITableViewStyleGrouped];
-```
-Then wrap your `SDScaffoldIndexViewController` instance in a `UINavigationController`
-
-```objective-c 
- UINavigationController *navController = [[UINavigationController alloc] 
-    initWithRootViewController:scaffoldViewController];
-```
-Done!
-
-
 ## Example Usage
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -57,30 +42,11 @@ Done!
 #pragma mark - SDLoginViewControllerDelegate
 
 - (void)loginViewController:(SDLoginViewController*)loginViewController authenticateWithCredential:(NSURLCredential*)credential{
-
-    //if success
     [loginViewController loginViewControllerDidAuthenticate];
-    
-    //if failure
-    //Pass Error with userInfoDictionary key set to message
-    // NSString *message = @"Don't Forget to override authenticateWithCredential";
-    //NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
-    //[loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
-
 }
 
 - (void)signUpViewController:(SDSignUpViewController*)signUpViewController signUpWithCredentials:(NSDictionary*)credentials{
-
-    //if success
-    [signUpViewController signUpViewControllerDidSignUp];
-    
-    
-    //if failure
-    //Pass Error with userInfoDictionary key set to message
-    // NSString *message = @"Don't Forget to override signUpWithCredentials";
-    //NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
-    //[loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
-    
+    [signUpViewController signUpViewControllerDidSignUp];      
 }
 ```
 ## Sample Images
