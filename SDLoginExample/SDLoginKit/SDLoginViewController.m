@@ -8,13 +8,15 @@
 
 #import "SDLoginViewController.h"
 
-@interface SDLoginViewController ()
+@interface SDLoginViewController () <SDLoginViewControllerDelelgate , SDSignUpViewControllerDelegate>
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) SDSignUpViewController *signUpViewController;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UITextField *emailField;
 -(void)didTapSignIn;
 @end
+
+
 
 @implementation SDLoginViewController
 
@@ -24,27 +26,15 @@
 @synthesize signUpViewController = _signUpViewController;
 @synthesize logoImageView = _logoImageView;
 
-+ (void)presentModalLoginViewControllerOnViewController:(UIViewController*)viewController withDelegate:(id)delegate{
-    
-    SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
-    [loginViewController setDelegate:delegate];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-    [viewController presentViewController:nvc animated:YES completion:nil];
-    
-}
-
 - (id)init{
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         self.title = @"Login";
         self.passwordField.delegate = self;
         self.emailField.delegate = self;
-        self.delegate = self;
         self.emailField.returnKeyType = UIReturnKeyNext;
         self.passwordField.returnKeyType = UIReturnKeyGo;
         self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, 300, 100)];
-        self.logoImage = [UIImage imageNamed:@"logo.png"];
-        self.logoImageView.image = self.logoImage;
         
         UIBarButtonItem *signUpButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Up" style:UIBarButtonItemStylePlain target:self action:@selector(didTapSignUp)];
         self.navigationItem.rightBarButtonItem = signUpButton;
@@ -144,67 +134,41 @@
     
 }
 
-
-
 #pragma mark ViewController
 
-
 - (void)didTapSignUp{
-    
     _signUpViewController = [[SDSignUpViewController alloc] initWithArrayOfFields:@[@"Email",@"Password", @"Company"]];
     [_signUpViewController setDelegate:self.delegate];
     [self.navigationController pushViewController:_signUpViewController animated:YES];
 }
 
 - (void)didTapSignIn{
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    
     NSURLCredential *creds = [NSURLCredential credentialWithUser:self.emailField.text password:self.passwordField.text persistence:NSURLCredentialPersistenceNone];
     
-    //call delegate
     [self.delegate loginViewControllerAuthenticateWithCredential:creds];
     
 }
 
 - (void)didTapPasswordReset{
-    
     SDPasswordResetViewController *pvc = [[SDPasswordResetViewController alloc] init];
     [self.navigationController pushViewController:pvc animated:YES];
-    
-    
 }
 
-#pragma mark SDLoginViewControllerDelegate
+#pragma mark SDLoginViewController
 
-- (void)loginViewControllerAuthenticateWithCredential:(NSURLCredential*)credential{
+- (void)loginViewControllerDidAuthenticate{
     
-    NSLog(@"Credential %@",[credential description]);
-    
-    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override loginViewControllerAuthenticateWithCredential :)", @"Message", nil];
-    
-    
-    [self loginViewControllerDidAuthenticateWithCredential:credential andResponse:nil];
-    
-    [self loginViewControllerFailedToAuthenticateWithError:[NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo]];
-    
-    
-}
-
-
-- (void)loginViewControllerDidAuthenticateWithCredential:(NSURLCredential*)credential andResponse:(id)response{
-    
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (void)loginViewControllerFailedToAuthenticateWithError:(NSError*)error{
     
-    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
-    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
+    NSString *message = [[error localizedRecoverySuggestion] capitalizedString];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    NSLog(@"Failed! %@", message);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
     
 }

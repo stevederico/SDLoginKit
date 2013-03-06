@@ -10,10 +10,11 @@
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
+@property (nonatomic, strong) SDLoginViewController *loginViewController;
 
 @end

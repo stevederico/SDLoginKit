@@ -11,6 +11,7 @@
 #import "ViewController.h"
 
 @implementation AppDelegate
+@synthesize loginViewController = _loginViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -20,46 +21,28 @@
     [self.window makeKeyAndVisible];
     
     //Add SDLoginKit
-    SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
-    loginViewController.logoImage = [UIImage imageNamed:@"superman"];
-
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-    [self.window.rootViewController presentViewController:navController animated:YES completion:nil];
+    self.loginViewController = [[SDLoginViewController alloc] init];
+    [self.loginViewController setDelegate:self];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
+    [self.viewController presentViewController:navController animated:YES completion:nil];
 
     return YES;
 }
 
 #pragma mark - SDLoginViewControllerDelegate
 
+
 - (void)loginViewControllerAuthenticateWithCredential:(NSURLCredential*)credential{
     
-    NSLog(@"Credential %@",[credential description]);
 
-    [self loginViewControllerDidAuthenticateWithCredential:credential andResponse:nil];
     
-    // Failure call loginViewControllerFailedToAuthenticateWithError with error to prompt
-    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Alert Title", @"Title", @"Don't Forget to override loginViewControllerAuthenticateWithCredential :)", @"Message", nil];
-    
-    [self loginViewControllerFailedToAuthenticateWithError:[NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo]];
-     
-    
-    
-}
+//    [self.loginViewController loginViewControllerDidAuthenticate];
 
-
-- (void)loginViewControllerDidAuthenticateWithCredential:(NSURLCredential*)credential andResponse:(id)response{
+    NSString *message = [NSString stringWithFormat:@"HEY"];
+    NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
     
-    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-}
+    [self.loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
 
-
-- (void)loginViewControllerFailedToAuthenticateWithError:(NSError*)error{
-    
-    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
-    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [alert show];
     
 }
 

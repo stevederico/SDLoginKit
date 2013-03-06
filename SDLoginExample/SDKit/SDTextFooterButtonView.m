@@ -28,7 +28,7 @@
                 
         //Default Button
         [self.button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [self.button setBackgroundImage:[UIImage imageNamed:@"Green_background.png"] forState:UIControlStateNormal];
+        [self.button setBackgroundImage:[UIImage imageNamed:@"green.png"] forState:UIControlStateNormal];
         
         [self addSubview: self.button];
     }
@@ -40,7 +40,7 @@
     
         if (style == SDFooterButtonStyleGreen) {
             [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [self.button setBackgroundImage:[UIImage imageNamed:@"Green_background.png"] forState:UIControlStateNormal];
+            [self.button setBackgroundImage:[UIImage imageNamed:@"green.png"] forState:UIControlStateNormal];
         }else if (style == SDFooterButtonStyleGray){
             [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self.button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -48,11 +48,11 @@
             [self.button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
              [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 
-            [self.button setBackgroundImage:[UIImage imageNamed:@"gray_button.png"] forState:UIControlStateNormal];
+            [self.button setBackgroundImage:[UIImage imageNamed:@"gray.png"] forState:UIControlStateNormal];
 
         }else if (style == SDFooterButtonStyleRed){
             [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [self.button setBackgroundImage:[UIImage imageNamed:@"Red_Background.png"] forState:UIControlStateNormal];
+            [self.button setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateNormal];
             
         }
     

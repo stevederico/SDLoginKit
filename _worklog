@@ -45,6 +45,20 @@ Added SDKit Assets
 Make Reset Password Field FirstResponder
 
 
+3/5
+Added New Authenticate Delegate Callback
+Added New Success Delegate Callback
+Added New Fail Delegate Callback
+Moved Success and Fail into VC methods
+Removed Credetials from Success
+Removed Class Method
+Removed Default Delegate
+Removed Response from Success
+Fixed SDLoginveViewController Delegate
+Fixed property bug
+
+- Add Form validation 
+- fix assets
 
 - AFNetworking 
 - Add Keyboard Bar
