@@ -143,6 +143,10 @@
 - (void)didTapSignIn{
     NSURLCredential *creds = [NSURLCredential credentialWithUser:self.emailField.text password:self.passwordField.text persistence:NSURLCredentialPersistenceNone];
     
+    if (!self.delegate) {
+        [NSException exceptionWithName:@"OverrideLogInWithCredentials" reason:@"No Delegate Set" userInfo:nil];
+    }
+    
     [self.delegate loginViewController:self authenticateWithCredential:creds];
     
 }
@@ -155,6 +159,8 @@
 #pragma mark SDLoginViewController
 
 - (void)loginViewControllerDidAuthenticate{
+    
+    
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

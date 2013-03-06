@@ -59,14 +59,23 @@ Fixed property bug
 Added LoginViewController Parameter to Delegate Methods
 Added SignUpViewController Parameter to Delegate Methods
 Cleaned up warnings
+Fixed delegate break on push pop
+Updated Failed for Sign Up
+Added No Delegate Exception
 
-- Add Form validation 
-- fix assets
+- SDKit Submodule
+- Form Validation
+- Fix HUD
+- Add Password Reset Support
+- Add Sign Up Support
+- Change Butotn text to Loading..
 
-- AFNetworking 
+
+
+
+
+- Add Form validation
 - Add Keyboard Bar
-- add login test delegate
-- singleton class method
 - relauch class method
 - Make SDSignUpDelegate same as SdLoginViewControllerDelegate
 - Custom SignIn Fields?

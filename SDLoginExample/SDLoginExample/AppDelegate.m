@@ -11,19 +11,19 @@
 #import "ViewController.h"
 
 @implementation AppDelegate
-@synthesize loginViewController = _loginViewController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
     //Add SDLoginKit
-    self.loginViewController = [[SDLoginViewController alloc] init];
-    [self.loginViewController setDelegate:self];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
+    SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
+    [loginViewController setDelegate:self];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [self.viewController presentViewController:navController animated:YES completion:nil];
 
     return YES;
@@ -34,13 +34,14 @@
 - (void)loginViewController:(SDLoginViewController*)loginViewController authenticateWithCredential:(NSURLCredential*)credential{
 
     //if success
-    [self.loginViewController loginViewControllerDidAuthenticate];
+    [loginViewController loginViewControllerDidAuthenticate];
     
-    //if failure
-    NSString *message = [NSString stringWithFormat:@"HEY"];
-    NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
-//
-    [loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
+//    //if failure
+    //Pass Error with userInfoDictionary key set to message
+//    NSString *message = @"Don't Forget to override authenticateWithCredential";
+//    NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
+////
+//    [loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
 
     
 }
@@ -50,9 +51,13 @@
   //if success
     [signUpViewController signUpViewControllerDidSignUp];
     
-  //if failure
-    [signUpViewController signUpViewControllerFailedToSignUpWithError:nil];
+//  //if failure
+    //Pass Error with userInfoDictionary key set to message
+//    NSString *message = @"Don't Forget to override signUpWithCredentials";
+//    NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
+//    [signUpViewController signUpViewControllerFailedToSignUpWithError:[NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
     
+   
 
     
 

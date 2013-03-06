@@ -145,12 +145,16 @@
         NSString *k = cell.textField.placeholder;
         NSString *v = cell.textField.text;
         if (![k isEqualToString:@"Password"]) {
-            v = v.lowercaseString;
+            k = k.lowercaseString;
         }
         [creds setValue:v forKey:k];
     }
     
     NSLog(@"CREDS %@",creds);
+    
+    if (!self.delegate) {
+        [NSException exceptionWithName:@"OverrideSignUpWithCredentials" reason:@"No Delegate Set" userInfo:nil];
+    }
     
     //call delegate
    [self.delegate signUpViewController:self signUpWithCredentials:creds];
@@ -162,13 +166,15 @@
     
 }
 
-- (void)signUpViewControllerFailedToSignUpWithError:(NSError *)error {
+- (void)signUpViewControllerFailedToSignUpWithError:(NSError*)error {
     
-    NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
-    NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
+    NSString *message = [[error localizedRecoverySuggestion] capitalizedString];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    NSLog(@"Failed! %@", message);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
+    
     
 }
 
