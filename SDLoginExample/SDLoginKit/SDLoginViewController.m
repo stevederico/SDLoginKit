@@ -8,15 +8,13 @@
 
 #import "SDLoginViewController.h"
 
-@interface SDLoginViewController () <SDLoginViewControllerDelelgate , SDSignUpViewControllerDelegate>
+@interface SDLoginViewController () 
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) SDSignUpViewController *signUpViewController;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UITextField *emailField;
 -(void)didTapSignIn;
 @end
-
-
 
 @implementation SDLoginViewController
 
@@ -137,15 +135,15 @@
 #pragma mark ViewController
 
 - (void)didTapSignUp{
-    _signUpViewController = [[SDSignUpViewController alloc] initWithArrayOfFields:@[@"Email",@"Password", @"Company"]];
-    [_signUpViewController setDelegate:self.delegate];
-    [self.navigationController pushViewController:_signUpViewController animated:YES];
+    self.signUpViewController = [[SDSignUpViewController alloc] initWithArrayOfFields:@[@"Email",@"Password", @"Company"]];
+    [self.signUpViewController setDelegate:self.delegate];
+    [self.navigationController pushViewController:self.signUpViewController animated:YES];
 }
 
 - (void)didTapSignIn{
     NSURLCredential *creds = [NSURLCredential credentialWithUser:self.emailField.text password:self.passwordField.text persistence:NSURLCredentialPersistenceNone];
     
-    [self.delegate loginViewControllerAuthenticateWithCredential:creds];
+    [self.delegate loginViewController:self authenticateWithCredential:creds];
     
 }
 

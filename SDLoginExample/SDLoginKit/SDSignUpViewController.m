@@ -38,7 +38,7 @@
         
         _fields = fields;
         self.title = @"Sign Up";
-        self.delegate = self;
+
     }
     return self;
 }
@@ -131,33 +131,38 @@
     return 75;
 }
 
-#pragma mark - SignUpViewControllerDelegate
 
-- (id)signUpViewControllerShouldBeginSignUp:(NSDictionary*)credentials{
+#pragma mark - SDSignUpViewController
+
+- (void)didTapSignUp{
     
-        //Send SignUp Request to Your Server
-        //Process Response
-        //Return NSError for Failure
-        //Returen Anything else including nil for Success
+    //get credinals
+    NSMutableDictionary *creds = [[NSMutableDictionary alloc] init];
     
-        //EXAMPLE FAILURE
-    NSDictionary *dictionaryUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"SignUp Error", @"Title", @"Don't Forget to override ShouldBeginSignUp. Return an NSError to display alerts.", @"Message", nil];
-    return [NSError errorWithDomain:@"SDLoginExample" code:410 userInfo:dictionaryUserInfo];
-        //EXAMPLE SUCCESS
-        // User *myUser = [User authenicatedUserFromBackend]
-        // return myUser
+    //This should loop through all and use their placeholders as keys
+    for (int i = 0; i < [self.tableView numberOfRowsInSection:0];i++) {
+        SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        NSString *k = cell.textField.placeholder;
+        NSString *v = cell.textField.text;
+        if (![k isEqualToString:@"Password"]) {
+            v = v.lowercaseString;
+        }
+        [creds setValue:v forKey:k];
+    }
     
-        //You can also return nil for Success
-        // return nil
+    NSLog(@"CREDS %@",creds);
+    
+    //call delegate
+   [self.delegate signUpViewController:self signUpWithCredentials:creds];
     
 }
 
-- (void)signUpViewControllerDidSuccessfullySignUpWithResponse:(id)response {
+- (void)signUpViewControllerDidSignUp{
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
-- (void)signUpViewControllerFailedToSignUpWithError:(NSError*)error{
+- (void)signUpViewControllerFailedToSignUpWithError:(NSError *)error {
     
     NSString *title = [[error.userInfo objectForKey:@"Title"] capitalizedString];
     NSString *message = [[error.userInfo objectForKey:@"Message"] capitalizedString];
@@ -168,42 +173,7 @@
 }
 
 
-#pragma mark - SDSignUpViewController
 
-- (void)didTapSignUp{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        //insert regex validate call here
-    
-        //get credinals
-    NSMutableDictionary *creds = [[NSMutableDictionary alloc] init];
-        //This should loop through all and use their placeholders as keys
-    for (int i = 0; i < [self.tableView numberOfRowsInSection:0];i++) {
-        SDPlaceholderCell *cell = (SDPlaceholderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        NSString *k = cell.textField.placeholder;
-        NSString *v = cell.textField.text;
-        if (![k isEqualToString:@"Password"]) {
-            v = v.lowercaseString;
-        }
-        
-        [creds setValue:v forKey:k];
-    }
-    
-    NSLog(@"CREDS %@",creds);
-    
-        //call delegate
-    id response = [self.delegate signUpViewControllerShouldBeginSignUp:creds];
-    
-    if ([response isKindOfClass:[NSError class]]) {
-            //There was an error
-        [self.delegate signUpViewControllerFailedToSignUpWithError:response];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    } else {
-        [self.delegate signUpViewControllerDidSuccessfullySignUpWithResponse:response];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    }
-    
-    
-}
 
 
 @end

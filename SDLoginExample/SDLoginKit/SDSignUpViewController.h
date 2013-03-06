@@ -6,21 +6,21 @@
     //  Copyright (c) 2013 Bixby Apps. All rights reserved.
     //
 #import "SDKit.h"
-#import "MBProgressHUD.h"
+
 #import <UIKit/UIKit.h>
+@class SDSignUpViewController;
+
 
 @protocol SDSignUpViewControllerDelegate <NSObject>
-
-- (id)signUpViewControllerShouldBeginSignUp:(NSDictionary*)credentials;
-- (void)signUpViewControllerDidSuccessfullySignUpWithResponse:(id)response;
-- (void)signUpViewControllerFailedToSignUpWithError:(NSError*)error;
-
+- (void)signUpViewController:(SDSignUpViewController*)signUpViewController signUpWithCredentials:(NSDictionary*)credentials;
 @end
 
 
-@interface SDSignUpViewController : UITableViewController <SDSignUpViewControllerDelegate, UITextFieldDelegate>
+@interface SDSignUpViewController : UITableViewController <UITextFieldDelegate>
 @property (nonatomic, weak) id <SDSignUpViewControllerDelegate> delegate;
 
 - (id)initWithArrayOfFields:(NSArray*)fields;
+- (void)signUpViewControllerDidSignUp;
+- (void)signUpViewControllerFailedToSignUpWithError:(NSError*)error;
 @end
 

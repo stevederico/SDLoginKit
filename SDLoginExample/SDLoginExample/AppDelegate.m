@@ -31,19 +31,33 @@
 
 #pragma mark - SDLoginViewControllerDelegate
 
+- (void)loginViewController:(SDLoginViewController*)loginViewController authenticateWithCredential:(NSURLCredential*)credential{
 
-- (void)loginViewControllerAuthenticateWithCredential:(NSURLCredential*)credential{
+    //if success
+    [self.loginViewController loginViewControllerDidAuthenticate];
     
-
-    
-//    [self.loginViewController loginViewControllerDidAuthenticate];
-
+    //if failure
     NSString *message = [NSString stringWithFormat:@"HEY"];
     NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
-    
-    [self.loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
+//
+    [loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
 
     
 }
+
+- (void)signUpViewController:(SDSignUpViewController*)signUpViewController signUpWithCredentials:(NSDictionary*)credentials{
+
+  //if success
+    [signUpViewController signUpViewControllerDidSignUp];
+    
+  //if failure
+    [signUpViewController signUpViewControllerFailedToSignUpWithError:nil];
+    
+
+    
+
+}
+
+
 
 @end

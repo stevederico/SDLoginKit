@@ -31,7 +31,6 @@
 		7B6800B616B5BE9D005D40B7 /* _worklog in Resources */ = {isa = PBXBuildFile; fileRef = 7B6800B516B5BE9D005D40B7 /* _worklog */; };
 		7B68011116B5C7FB005D40B7 /* welcome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011016B5C7FB005D40B7 /* welcome.jpg */; };
 		7B68011716B5E218005D40B7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B68011616B5E218005D40B7 /* logo.png */; };
-		7BD5D03E16E13FCB006E6293 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03616E13FCB006E6293 /* MBProgressHUD.m */; };
 		7BD5D03F16E13FCB006E6293 /* SDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03916E13FCB006E6293 /* SDLoginViewController.m */; };
 		7BD5D04016E13FCB006E6293 /* SDPasswordResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */; };
 		7BD5D04116E13FCB006E6293 /* SDSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */; };
@@ -75,8 +74,6 @@
 		7B6800B516B5BE9D005D40B7 /* _worklog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = _worklog; path = ../../_worklog; sourceTree = "<group>"; };
 		7B68011016B5C7FB005D40B7 /* welcome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome.jpg; sourceTree = "<group>"; };
 		7B68011616B5E218005D40B7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		7BD5D03516E13FCB006E6293 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		7BD5D03616E13FCB006E6293 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		7BD5D03716E13FCB006E6293 /* SDLoginKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLoginKit.h; sourceTree = "<group>"; };
 		7BD5D03816E13FCB006E6293 /* SDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLoginViewController.h; sourceTree = "<group>"; };
 		7BD5D03916E13FCB006E6293 /* SDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLoginViewController.m; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 		7BD5D03416E13FCB006E6293 /* SDLoginKit */ = {
 			isa = PBXGroup;
 			children = (
-				7BD5D03516E13FCB006E6293 /* MBProgressHUD.h */,
-				7BD5D03616E13FCB006E6293 /* MBProgressHUD.m */,
 				7BD5D03716E13FCB006E6293 /* SDLoginKit.h */,
 				7BD5D03816E13FCB006E6293 /* SDLoginViewController.h */,
 				7BD5D03916E13FCB006E6293 /* SDLoginViewController.m */,
@@ -283,7 +278,6 @@
 				7B255D5B16B5BDCF0036AFB8 /* main.m in Sources */,
 				7B255D5F16B5BDCF0036AFB8 /* AppDelegate.m in Sources */,
 				7B255D6816B5BDCF0036AFB8 /* ViewController.m in Sources */,
-				7BD5D03E16E13FCB006E6293 /* MBProgressHUD.m in Sources */,
 				7BD5D03F16E13FCB006E6293 /* SDLoginViewController.m in Sources */,
 				7BD5D04016E13FCB006E6293 /* SDPasswordResetViewController.m in Sources */,
 				7BD5D04116E13FCB006E6293 /* SDSignUpViewController.m in Sources */,

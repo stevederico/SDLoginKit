@@ -56,6 +56,9 @@ Removed Default Delegate
 Removed Response from Success
 Fixed SDLoginveViewController Delegate
 Fixed property bug
+Added LoginViewController Parameter to Delegate Methods
+Added SignUpViewController Parameter to Delegate Methods
+Cleaned up warnings
 
 - Add Form validation 
 - fix assets
