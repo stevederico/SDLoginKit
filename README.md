@@ -21,44 +21,32 @@ Overall, this is a great way to get your authentication up and running then you 
 
 > If you enjoy this project, I would encourage you to check out [SDScaffoldKit](http://www.github.com/stevederico/SDScaffoldKit) the easiest way to create views for your Core Data models. I also highly recommend you follow [Mattt Thompson](http://www.github.com/mattt) and his series of open source libraries covering the mission-critical aspects of an iOS app's infrastructure. Be sure to check out its sister projects: [GroundControl](https://github.com/mattt/GroundControl), [SkyLab](https://github.com/mattt/SkyLab), [CargoBay](https://github.com/mattt/CargoBay), and [houston](https://github.com/mattt/houston).
 
-## Getting Started
-
-### Create Core Data Models
-
-1. Add `CoreData.framework` into your project
-2. Create Core Data Model
-3. `#import "SDScaffoldKit.h"` and create an instance with desginated initializer `initWithEntityName:soryBy:context:andStyle:`
-
-```objective-c
-  SDScaffoldIndexViewController *scaffoldViewController = [[SDScaffoldIndexViewController alloc] 
-    initWithEntityName:@"User" sortBy:@"lastname" context:[self managedObjectContext] andStyle:UITableViewStyleGrouped];
-```
-Then wrap your `SDScaffoldIndexViewController` instance in a `UINavigationController`
-
-```objective-c 
- UINavigationController *navController = [[UINavigationController alloc] 
-    initWithRootViewController:scaffoldViewController];
-```
-Done!
-
-
 ## Example Usage
 ```objective-c
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-     // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   
-    SDScaffoldIndexViewController *scaffoldViewController = [[SDScaffoldIndexViewController alloc] initWithEntityName:@"User" 
-     sortBy:@"lastname" context:[self managedObjectContext]];
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:scaffoldViewController];
-  
-    self.window.rootViewController = navController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
+    //Add SDLoginKit
+    SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
+    [loginViewController setDelegate:self];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self.viewController presentViewController:navController animated:YES completion:nil];
+
     return YES;
+}
+
+#pragma mark - SDLoginViewControllerDelegate
+
+- (void)loginViewController:(SDLoginViewController*)loginViewController authenticateWithCredential:(NSURLCredential*)credential{
+    [loginViewController loginViewControllerDidAuthenticate];
+}
+
+- (void)signUpViewController:(SDSignUpViewController*)signUpViewController signUpWithCredentials:(NSDictionary*)credentials{
+    [signUpViewController signUpViewControllerDidSignUp];      
 }
 ```
 ## Sample Images
