@@ -23,6 +23,7 @@
     //Add SDLoginKit
     SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
     [loginViewController setDelegate:self];
+    [loginViewController setLogoImage:[UIImage imageNamed:@"logo"]];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [self.viewController presentViewController:navController animated:YES completion:nil];
 

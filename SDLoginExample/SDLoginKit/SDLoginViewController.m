@@ -157,6 +157,12 @@
     [self.navigationController pushViewController:pvc animated:YES];
 }
 
+- (void)setLogoImage:(UIImage *)logoImage{
+    _logoImage = logoImage;
+    [self.logoImageView setImage:self.logoImage];
+    
+}
+
 #pragma mark SDLoginViewController
 
 - (void)loginViewControllerDidAuthenticate{
