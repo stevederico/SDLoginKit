@@ -2,7 +2,7 @@ SDLoginKit
 =======
 **Login/Sign-Up ViewControllers Ready-To-Use with your Custom Backend**
 
-Building a authentication system can be tedious and repeative. Why write the same code over and over when you could be spending time working on real application logic? SDLoginKit is a simple library that provides Login and Sign-Up viewcontrollers out-of-the-box. Just subscribe to a few delegate callbacks for success/failure and BAM! You are ready to start managing and creating users. Want to customize the entire experience? No problem just override `loginViewControllerShouldBeginLogin` and all the codez belong to you! You can even add your own logo to the login screen. Just set `logoImage` to the `UIImage` of your choice.
+Building a authentication system can be tedious and repeative. Why write the same code over and over when you could be spending time working on real application logic? SDLoginKit is a simple library that provides Login and Sign-Up viewcontrollers out-of-the-box. Just subscribe to a delegate callback, respond with the built-in success/failure methods (or roll your own) then BAM! You are ready to start managing and creating users. Want to customize the entire experience? No problem just override `authenticateWithCredential` and all the codez belong to you! You can even add your own logo to the login screen. Just set `logoImage` to the `UIImage` of your choice.
 
 > SDLoginKit is named LoginKit, because it has everything you need add a fully-customizable authentication system to your iOS Application.
 
@@ -20,6 +20,10 @@ Please help me by submitting a generic implementation with your back-end of choi
 Overall, this is a great way to get your authentication up and running then you can go from there.
 
 > If you enjoy this project, I would encourage you to check out [SDScaffoldKit](http://www.github.com/stevederico/SDScaffoldKit) the easiest way to create views for your Core Data models. I also highly recommend you follow [Mattt Thompson](http://www.github.com/mattt) and his series of open source libraries covering the mission-critical aspects of an iOS app's infrastructure. Be sure to check out its sister projects: [GroundControl](https://github.com/mattt/GroundControl), [SkyLab](https://github.com/mattt/SkyLab), [CargoBay](https://github.com/mattt/CargoBay), and [houston](https://github.com/mattt/houston).
+
+Follow [@stevederico](http://www.twitter.com/stevederico) on twitter, tell me what you think.  [![Twitter image](http://f.cl.ly/items/1X0V1N003j2h192x3J0Z/Screen%20Shot%202013-02-11%20at%2012.48.45%20AM.png)](http://www.twitter.com/stevederico)
+
+Watch [refactor.tv](http://www.refactor.tv), a podcast with [Sam Soffes](http://www.twitter.com/soffes) and myself, where we cover iOS and Open-source projects each week.
 
 ## Example Usage
 ```objective-c
