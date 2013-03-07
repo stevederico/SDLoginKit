@@ -1,10 +1,10 @@
-    //
-    //  SDSignUpViewController.m
-    //  SDLoginKit
-    //
-    //  Created by Steve Derico on 1/26/13.
-    //  Copyright (c) 2013 Bixby Apps. All rights reserved.
-    //
+//
+//  SDSignUpViewController.m
+//  SDLoginKit
+//
+//  Created by Steve Derico on 1/26/13.
+//  Copyright (c) 2013 Bixby Apps. All rights reserved.
+//
 
 #import "SDSignUpViewController.h"
 

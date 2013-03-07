@@ -135,7 +135,7 @@
 #pragma mark ViewController
 
 - (void)didTapSignUp{
-    self.signUpViewController = [[SDSignUpViewController alloc] initWithArrayOfFields:@[@"Email",@"Password", @"Company"]];
+    self.signUpViewController = [[SDSignUpViewController alloc] initWithArrayOfFields:@[@"Email",@"Password"]];
     [self.signUpViewController setDelegate:self.delegate];
     [self.navigationController pushViewController:self.signUpViewController animated:YES];
 }
@@ -153,13 +153,13 @@
 
 - (void)didTapPasswordReset{
     SDPasswordResetViewController *pvc = [[SDPasswordResetViewController alloc] init];
+    pvc.delegate = self.delegate;
     [self.navigationController pushViewController:pvc animated:YES];
 }
 
 #pragma mark SDLoginViewController
 
 - (void)loginViewControllerDidAuthenticate{
-    
     
     
     [self dismissViewControllerAnimated:YES completion:nil];

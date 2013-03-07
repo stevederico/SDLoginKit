@@ -9,40 +9,23 @@
 #import "SDPasswordResetViewController.h"
 
 @interface SDPasswordResetViewController ()
+@property(nonatomic,strong) UITextField *emailField;
 
 @end
 
 @implementation SDPasswordResetViewController
 
-- (id) init{
+@synthesize delegate = _delegate;
+
+- (id)init{
+    
     self = [super initWithStyle:UITableViewStyleGrouped];
     
     self.title = @"Forgot Password?";
     
     return self;
-
 }
 
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:UITableViewStyleGrouped];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
 
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -88,15 +71,13 @@
     
     cell.textField.tag = indexPath.row;
     cell.textField.placeholder = @"Email";
+    self.emailField = cell.textField;
 
-    
     return cell;
 }
 
 
 #pragma mark - Table view delegate
-
-#pragma mark UITableViewDelegate
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
@@ -111,15 +92,28 @@
     return 75;
 }
 
+#pragma mark - SDPasswordResetViewController
+
+- (void)passwordResetViewControllerDidResetPassword{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Sent" message:@"A Password Reset Link Has Been Sent to Your Email Address." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    
+}
+- (void)passwordResetViewControllerFailedToResetPasswordWithError:(NSError*)error{
+    
+    NSString *message = [[error localizedRecoverySuggestion] capitalizedString];
+    
+    NSLog(@"Failed! %@", message);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+
+
+}
+
 - (void)didTapSendReset{
-    
-
-  
-    
-
-    
-
-
+    [self.delegate passwordResetViewController:self resetPasswordWithEmail:self.emailField.text];
 }
 
 

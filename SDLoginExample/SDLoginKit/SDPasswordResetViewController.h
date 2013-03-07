@@ -9,7 +9,18 @@
 #import "SDPlaceholderCell.h"
 #import "SDFooterButtonView.h"
 #import <UIKit/UIKit.h>
+@class SDPasswordResetViewController;
+
+@protocol SDPasswordResetViewControllerDelegate <NSObject>
+- (void)passwordResetViewController:(SDPasswordResetViewController*)passwordResetViewController resetPasswordWithEmail:(NSString*)email;
+@end
 
 @interface SDPasswordResetViewController : UITableViewController <UITextFieldDelegate>
-
+@property (nonatomic, weak) id <SDPasswordResetViewControllerDelegate> delegate;
+- (void)passwordResetViewControllerDidResetPassword;
+- (void)passwordResetViewControllerFailedToResetPasswordWithError:(NSError*)error;
 @end
+
+
+
+

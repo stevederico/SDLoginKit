@@ -63,27 +63,24 @@ Fixed delegate break on push pop
 Updated Failed for Sign Up
 Added No Delegate Exception
 
+3/7
+Added Password Reset Support
+Added Sign Up Support
+
+
+- How-to Get Started in Readme
+- Add Password Confirm if Added Password to Sign Up
+- Add Keyboard Bar
+
 - SDKit Submodule
 - Form Validation
 - Fix HUD
-- Add Password Reset Support
-- Add Sign Up Support
-- Change Butotn text to Loading..
+- Change Button text to Loading..
 
 
-
-
-
-- Add Form validation
-- Add Keyboard Bar
-- relauch class method
-- Make SDSignUpDelegate same as SdLoginViewControllerDelegate
+Maybe?
 - Custom SignIn Fields?
-- Add an SDLoginViewController property for ArrayFields
 - SignUp Backing Store?
-- Add Password Confirm match support
-- Class method for show login
-- Add Customizeable Fields
 - Add Validations on placeholders with Email or @ signs.
     - Set validation switch on loginViewController
     - Set password length or number requirement
@@ -91,6 +88,9 @@ Added No Delegate Exception
     - Check for blanks
     - Allow for optional fields
     - Allow for Boolean/Date Responses
+    - property for Email Regex validation
+- Keychain support for current user?
+- Cached Login, check Keychain
 
 - Add PreDefined backends
     -Systems
@@ -99,12 +99,9 @@ Added No Delegate Exception
         -Devise
     - Facebook
     - Twitter
-- Add AFNetworking for predineds
-- Enable Encryption Between Client-Server
-- Forgot password
-- How-to get Started in Readme
-- Cached Login
-- Sign Out?
-- Add currentUser to SDLoginViewController?
--serverURL
--property for Email Regex validation
+    - Add AFNetworking for predefined implementations
+    - serverURL
+
+
+
+

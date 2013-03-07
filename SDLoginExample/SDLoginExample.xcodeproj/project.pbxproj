@@ -195,10 +195,10 @@
 				7BD5D03716E13FCB006E6293 /* SDLoginKit.h */,
 				7BD5D03816E13FCB006E6293 /* SDLoginViewController.h */,
 				7BD5D03916E13FCB006E6293 /* SDLoginViewController.m */,
-				7BD5D03A16E13FCB006E6293 /* SDPasswordResetViewController.h */,
-				7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */,
 				7BD5D03C16E13FCB006E6293 /* SDSignUpViewController.h */,
 				7BD5D03D16E13FCB006E6293 /* SDSignUpViewController.m */,
+				7BD5D03A16E13FCB006E6293 /* SDPasswordResetViewController.h */,
+				7BD5D03B16E13FCB006E6293 /* SDPasswordResetViewController.m */,
 			);
 			path = SDLoginKit;
 			sourceTree = "<group>";

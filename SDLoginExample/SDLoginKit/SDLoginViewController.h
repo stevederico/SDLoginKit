@@ -18,7 +18,7 @@
 
 
 @interface SDLoginViewController : UITableViewController <UITextFieldDelegate>
-@property (nonatomic, weak) id <SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate, SDPasswordResetViewControllerDelegate> delegate;
 @property (nonatomic, strong) UIImage *logoImage;
 
 - (void)loginViewControllerDidAuthenticate;

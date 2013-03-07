@@ -36,30 +36,31 @@
     //if success
     [loginViewController loginViewControllerDidAuthenticate];
     
-//    //if failure
+    //if failure
     //Pass Error with userInfoDictionary key set to message
-//    NSString *message = @"Don't Forget to override authenticateWithCredential";
-//    NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
-////
-//    [loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
+    // NSString *message = @"Don't Forget to override authenticateWithCredential";
+    //NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
+    //[loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
 
-    
 }
 
 - (void)signUpViewController:(SDSignUpViewController*)signUpViewController signUpWithCredentials:(NSDictionary*)credentials{
 
-  //if success
+    //if success
     [signUpViewController signUpViewControllerDidSignUp];
     
-//  //if failure
+    
+    //if failure
     //Pass Error with userInfoDictionary key set to message
-//    NSString *message = @"Don't Forget to override signUpWithCredentials";
-//    NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
-//    [signUpViewController signUpViewControllerFailedToSignUpWithError:[NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
+    // NSString *message = @"Don't Forget to override signUpWithCredentials";
+    //NSDictionary *userInfoDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:message, NSLocalizedRecoverySuggestionErrorKey , nil];
+    //[loginViewController loginViewControllerFailedToAuthenticateWithError: [NSError errorWithDomain:@"SDLoginKit" code:nil userInfo:userInfoDictionary]];
     
-   
+}
 
-    
+- (void)passwordResetViewController:(SDPasswordResetViewController *)passwordResetViewController resetPasswordWithEmail:(NSString *)email{
+
+    [passwordResetViewController passwordResetViewControllerDidResetPassword];
 
 }
 

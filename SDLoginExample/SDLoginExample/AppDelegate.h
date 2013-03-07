@@ -10,7 +10,7 @@
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, SDLoginViewControllerDelelgate, SDSignUpViewControllerDelegate, SDPasswordResetViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
