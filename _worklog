@@ -67,11 +67,12 @@ Added No Delegate Exception
 Added Password Reset Support
 Added Sign Up Support
 Added Set LogoImage Support
+Changed didTapSignIn to didTapLogin
+Fixed Play Again Bug
 
 - How-to Get Started in Readme
 - Add Password Confirm if Added Password to Sign Up
 - Add Keyboard Bar
-
 - SDKit Submodule
 - Form Validation
 - Fix HUD

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "AppDelegate.h"
 @interface ViewController ()
 
 @end
@@ -37,6 +37,8 @@
     //Add SDLoginKit
     SDLoginViewController *loginViewController = [[SDLoginViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [loginViewController setDelegate:(AppDelegate*)[[UIApplication sharedApplication] delegate]];
+    [loginViewController setLogoImage:[UIImage imageNamed:@"logo"]];
     [self presentViewController:navController animated:YES completion:nil];
 }
 @end
