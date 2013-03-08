@@ -21,7 +21,8 @@ Overall, this is a great way to get your authentication up and running then you 
 
 > If you enjoy this project, I would encourage you to check out [SDScaffoldKit](http://www.github.com/stevederico/SDScaffoldKit) the easiest way to create views for your Core Data models. I also highly recommend you follow [Mattt Thompson](http://www.github.com/mattt) and his series of open source libraries covering the mission-critical aspects of an iOS app's infrastructure. Be sure to check out its sister projects: [GroundControl](https://github.com/mattt/GroundControl), [SkyLab](https://github.com/mattt/SkyLab), [CargoBay](https://github.com/mattt/CargoBay), and [houston](https://github.com/mattt/houston).
 
-Follow [@stevederico](http://www.twitter.com/stevederico) on twitter, tell me what you think.  [![Twitter image](http://f.cl.ly/items/1X0V1N003j2h192x3J0Z/Screen%20Shot%202013-02-11%20at%2012.48.45%20AM.png)](http://www.twitter.com/stevederico)
+Follow [@stevederico](http://www.twitter.com/stevederico) on twitter, tell me what you think.  
+[![Twitter image](http://f.cl.ly/items/1X0V1N003j2h192x3J0Z/Screen%20Shot%202013-02-11%20at%2012.48.45%20AM.png)](http://www.twitter.com/stevederico)
 
 Watch [refactor.tv](http://www.refactor.tv), a podcast with [Sam Soffes](http://www.twitter.com/soffes) and myself, where we cover iOS and Open-source projects each week.
 
