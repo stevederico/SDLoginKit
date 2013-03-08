@@ -13,7 +13,7 @@
 @property (nonatomic, strong) SDSignUpViewController *signUpViewController;
 @property (strong, nonatomic) UITextField *passwordField;
 @property (strong, nonatomic) UITextField *emailField;
--(void)didTapSignIn;
+-(void)didTapLogin;
 @end
 
 @implementation SDLoginViewController
@@ -50,7 +50,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if (textField == _passwordField) {
-        [self didTapSignIn];
+        [self didTapLogin];
     }else{
         [self.passwordField becomeFirstResponder];
     }
@@ -105,7 +105,7 @@
     
     SDFooterButtonView *footerView = [[SDFooterButtonView alloc] initWithStyle:SDFooterButtonStyleGreen];
     [footerView.button setTitle:@"Sign In" forState:UIControlStateNormal];
-    [footerView.button addTarget:self action:@selector(didTapSignIn) forControlEvents:UIControlEventTouchUpInside];
+    [footerView.button addTarget:self action:@selector(didTapLogin) forControlEvents:UIControlEventTouchUpInside];
     return footerView;
 }
 
@@ -140,7 +140,7 @@
     [self.navigationController pushViewController:self.signUpViewController animated:YES];
 }
 
-- (void)didTapSignIn{
+- (void)didTapLogin{
     NSURLCredential *creds = [NSURLCredential credentialWithUser:self.emailField.text password:self.passwordField.text persistence:NSURLCredentialPersistenceNone];
     
     if (!self.delegate) {
