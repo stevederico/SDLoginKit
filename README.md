@@ -57,7 +57,7 @@ Watch [refactor.tv](http://www.refactor.tv), a podcast with [Sam Soffes](http://
 ![Sign In](http://dl.dropbox.com/u/12035142/Screenshots/3.png)
 ![Password Reset](http://dl.dropbox.com/u/12035142/Screenshots/4.png)
 ![Sign Up](http://dl.dropbox.com/u/12035142/Screenshots/5.png)
-![Logo](http://f.cl.ly/items/1J0w2Z1I2J0v20011h2c/iOS%20Simulator%20Screen%20shot%20Jan%2027,%202013%202.31.54%20PM.png)
+![Logo](http://dl.dropbox.com/u/12035142/Screenshots/su.png)
 ## Contact
 
 Steve Derico
